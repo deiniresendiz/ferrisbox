@@ -1,0 +1,80 @@
+{
+  "app": {
+    "name": "FerrisBox",
+    "tagline": "The Developer's Swiss Army Knife"
+  },
+  "sidebar": {
+    "favorites": "Favorites",
+    "allTools": "All Tools",
+    "search": "Search tools...",
+    "categories": {
+      "encoders": "Encoders",
+      "formatters": "Formatters",
+      "generators": "Generators",
+      "converters": "Converters",
+      "utilities": "Utilities"
+    }
+  },
+  "tools": {
+    "jsonFormatter": {
+      "name": "JSON Formatter",
+      "description": "Format, validate and beautify JSON",
+      "input": "Input JSON",
+      "output": "Formatted JSON",
+      "actions": {
+        "format": "Format",
+        "minify": "Minify",
+        "copy": "Copy",
+        "clear": "Clear"
+      },
+      "errors": {
+        "invalidJson": "Invalid JSON syntax",
+        "empty": "Please enter some JSON"
+      }
+    },
+    "hashGenerator": {
+      "name": "Hash Generator",
+      "description": "Generate cryptographic hashes",
+      "input": "Input text or file",
+      "algorithm": "Algorithm",
+      "output": "Hash output",
+      "actions": {
+        "generate": "Generate",
+        "copy": "Copy",
+        "selectFile": "Select File"
+      }
+    },
+    "base64Encoder": {
+      "name": "Base64 Encoder/Decoder",
+      "description": "Encode or decode Base64",
+      "tabs": {
+        "encode": "Encode",
+        "decode": "Decode"
+      },
+      "input": "Input",
+      "output": "Output",
+      "actions": {
+        "encode": "Encode",
+        "decode": "Decode",
+        "copy": "Copy"
+      }
+    }
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "clear": "Clear",
+    "error": "Error",
+    "success": "Success",
+    "copied": "Copied to clipboard!",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Search tools... (Ctrl+K)",
+    "noResults": "No tools found",
+    "recentlyUsed": "Recently Used"
+  }
+}

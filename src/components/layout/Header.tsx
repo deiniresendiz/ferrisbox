@@ -1,0 +1,58 @@
+import React from 'react';
+import { Moon, Sun, Languages } from 'lucide-react';
+import { useTheme } from '../../contexts/ThemeContext';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
+
+export const Header: React.FC<{ currentTool?: string }> = ({ currentTool }) => {
+  const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation();
+
+  return (
+    <header className="h-16 border-b border-gray-200 dark:border-space-500 bg-white dark:bg-space-700 flex items-center justify-between px-6">
+      <div>
+        {currentTool ? (
+          <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{currentTool}</h1>
+        ) : (
+          <div className="flex items-center gap-3">
+            <img src="/logo.svg" alt="FerrisBox" className="w-8 h-8" />
+            <div>
+              <h1 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                {t('app.name')}
+              </h1>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{t('app.tagline')}</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="flex items-center gap-2">
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-space-600 transition-colors"
+          title={theme === 'dark' ? t('common.theme.light') : t('common.theme.dark')}
+        >
+          {theme === 'dark' ? (
+            <Sun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+          ) : (
+            <Moon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+          )}
+        </button>
+
+        <div className="relative">
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-space-600 transition-colors flex items-center gap-2"
+            title="Change language"
+          >
+            <Languages className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-300 uppercase">
+              {language}
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
