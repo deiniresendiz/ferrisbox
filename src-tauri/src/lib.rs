@@ -3,7 +3,7 @@ mod storage;
 mod tools;
 mod utils;
 
-use commands::{clipboard, encoders, formatters, generators, storage as storage_commands};
+use commands::{clipboard, encoders, formatters, generators, storage as storage_commands, utilities};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -32,6 +32,9 @@ pub fn run() {
             encoders::decode_base64_command,
             encoders::encode_url_command,
             encoders::decode_url_command,
+            // Utility commands
+            utilities::test_regex_command,
+            utilities::validate_regex_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])

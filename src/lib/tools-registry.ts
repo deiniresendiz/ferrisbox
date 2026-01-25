@@ -1,4 +1,4 @@
-import { FileJson, Hash, Binary, Key, Link, type LucideIcon } from 'lucide-react';
+import { FileJson, Hash, Binary, Key, Link, TestTube2, type LucideIcon } from 'lucide-react';
 import type { Tool } from '../types';
 
 // Import components
@@ -7,6 +7,7 @@ import { HashGenerator } from '../components/tools/HashGenerator';
 import { Base64Encoder } from '../components/tools/Base64Encoder';
 import { UuidGenerator } from '../components/tools/UuidGenerator';
 import { UrlEncoder } from '../components/tools/UrlEncoder';
+import { RegexTester } from '../components/tools/RegexTester';
 
 export const TOOLS: Tool[] = [
   {
@@ -53,6 +54,15 @@ export const TOOLS: Tool[] = [
     keywords: ['url', 'encode', 'decode', 'percent', 'uri'],
     component: UrlEncoder,
     icon: Link as LucideIcon,
+  },
+  {
+    id: 'regex-tester',
+    name: 'Regex Tester',
+    category: 'utility',
+    description: 'Test and validate regular expressions',
+    keywords: ['regex', 'regexp', 'pattern', 'match', 'test', 'validate'],
+    component: RegexTester,
+    icon: TestTube2 as LucideIcon,
   },
 ];
 

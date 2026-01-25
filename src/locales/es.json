@@ -58,6 +58,34 @@
         "decode": "Decodificar",
         "copy": "Copiar"
       }
+    },
+    "regexTester": {
+      "name": "Probador de Regex",
+      "description": "Probar y validar expresiones regulares",
+      "pattern": "Patrón de Expresión Regular",
+      "testText": "Texto de Prueba",
+      "flags": {
+        "caseInsensitive": "Insensible a mayúsculas (i)"
+      },
+      "commonPatterns": "Patrones Comunes",
+      "results": {
+        "matches": "Coincidencias",
+        "match": "Coincidencia",
+        "found": "Encontrada(s)",
+        "highlighted": "Texto con Coincidencias Resaltadas",
+        "details": "Detalles de Coincidencias",
+        "position": "Posición",
+        "captureGroups": "Grupos de Captura",
+        "group": "Grupo"
+      },
+      "placeholder": {
+        "pattern": "Ingresa el patrón regex...",
+        "testText": "Ingresa texto para probar con el patrón...",
+        "empty": "Ingresa un patrón regex y texto de prueba para ver resultados"
+      },
+      "errors": {
+        "invalidPattern": "Patrón regex inválido"
+      }
     }
   },
   "common": {
