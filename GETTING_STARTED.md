@@ -65,13 +65,13 @@ npm test
 
 ```
 ferrisbox/
-├── src/                       # React frontend
-│   ├── components/           # React components
-│   ├── contexts/             # React contexts (theme, i18n, etc.)
-│   ├── lib/                  # Tools registry and utilities
-│   ├── locales/              # Translations (en, es)
-│   ├── styles/               # Global styles
-│   └── types/                # TypeScript types
+ ├── src/                       # React frontend
+ │   ├── components/           # React components
+ │   ├── contexts/             # React contexts (theme, i18n, etc.)
+ │   ├── lib/                  # Tools registry and utilities
+ │   ├── locales/              # Translations (en, es, pt, zh)
+ │   ├── styles/               # Global styles
+ │   └── types/                # TypeScript types
 ├── src-tauri/                # Rust backend
 │   └── src/
 │       ├── commands/         # Tauri commands (API bridge)
@@ -87,13 +87,17 @@ ferrisbox/
 - **JSON Formatter** - Format, validate, minify JSON
 - **Hash Generator** - Generate SHA-256 and MD5 hashes
 - **Base64 Encoder/Decoder** - Encode and decode Base64
+- **UUID Generator** - Generate v4 (random) and v7 (timestamp) UUIDs
+- **URL Encoder/Decoder** - Encode and decode URL strings
+- **Regex Tester** - Test and validate regular expressions with live results
 
 ### Key Features
-- Dark/Light theme
-- Multi-language support (English/Spanish)
-- Favorites system
-- Search functionality
-- Local configuration persistence
+- Dark/Light theme with smooth transitions
+- Multi-language support (English, Spanish, Portuguese, Chinese)
+- Favorites system for quick access
+- Search functionality with Command Palette (Ctrl+K)
+- Smart paste detection for clipboard content
+- Local configuration persistence (no cloud needed)
 
 ## Configuration
 

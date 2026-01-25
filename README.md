@@ -8,19 +8,20 @@
 
 FerrisBox is a desktop application that provides essential developer tools with maximum performance and privacy. All processing happens locally on your machine.
 
-### Current Tools (Phase 2)
+### Current Tools (Phase 3)
 
 - **JSON Formatter** - Format, validate, and beautify JSON with syntax highlighting
 - **Hash Generator** - Generate SHA-256 and MD5 hashes
 - **Base64 Encoder/Decoder** - Encode and decode Base64 strings
 - **UUID Generator** - Generate v4 (random) or v7 (timestamp-based) UUIDs
 - **URL Encoder/Decoder** - Encode and decode URL strings with percent-encoding
+- **Regex Tester** - Test and validate regular expressions with match highlighting
 
 ### Key Features
 
 - ⚡ **Blazing Fast** - Built with Rust for maximum performance
 - 🔒 **Privacy First** - All processing happens locally, no data leaves your machine
-- 🌍 **Multi-language** - Supports English and Spanish
+- 🌍 **Multi-language** - Supports English, Spanish, Portuguese, and Chinese
 - 🎨 **Dark/Light Mode** - Beautiful UI with theme switching
 - ⭐ **Favorites** - Mark your most-used tools
 - 🔍 **Quick Search** - Find tools instantly with Command Palette (Ctrl+K)
@@ -106,15 +107,17 @@ The configuration includes:
 - [x] Command Palette (Ctrl+K)
 - [x] Smart Paste Detection
 
-### Phase 3 (Planned)
+### Phase 3 (✅ Completed)
+- [x] Regex Tester
+
+### Phase 4 (Planned)
 - [ ] Text Diff Tool
-- [ ] Regex Tester
 - [ ] QR Code Generator
 - [ ] Password Generator
 - [ ] Lorem Ipsum Generator
 - [ ] Color Picker & Converter
 
-### Phase 4 (Future)
+### Phase 5 (Future)
 - [ ] Image Compressor
 - [ ] Cron Expression Builder
 - [ ] More encoding formats
