@@ -8,11 +8,13 @@
 
 FerrisBox is a desktop application that provides essential developer tools with maximum performance and privacy. All processing happens locally on your machine.
 
-### Current Tools (Phase 1)
+### Current Tools (Phase 2)
 
 - **JSON Formatter** - Format, validate, and beautify JSON with syntax highlighting
 - **Hash Generator** - Generate SHA-256 and MD5 hashes
 - **Base64 Encoder/Decoder** - Encode and decode Base64 strings
+- **UUID Generator** - Generate v4 (random) or v7 (timestamp-based) UUIDs
+- **URL Encoder/Decoder** - Encode and decode URL strings with percent-encoding
 
 ### Key Features
 
@@ -21,7 +23,8 @@ FerrisBox is a desktop application that provides essential developer tools with 
 - 🌍 **Multi-language** - Supports English and Spanish
 - 🎨 **Dark/Light Mode** - Beautiful UI with theme switching
 - ⭐ **Favorites** - Mark your most-used tools
-- 🔍 **Quick Search** - Find tools instantly
+- 🔍 **Quick Search** - Find tools instantly with Command Palette (Ctrl+K)
+- 🧠 **Smart Paste** - Auto-detect clipboard content and suggest the right tool
 - 📦 **Lightweight** - Small binary size thanks to Tauri
 
 ## Tech Stack
@@ -92,25 +95,27 @@ The configuration includes:
 
 ## Keyboard Shortcuts
 
-- `Ctrl+K` (Cmd+K on Mac) - Open command palette *(coming soon)*
+- `Ctrl+K` (Cmd+K on Mac) - Open Command Palette for instant tool search
 - `Ctrl+,` - Open settings *(coming soon)*
 
 ## Roadmap
 
-### Phase 2 (Planned)
-- [ ] UUID Generator
-- [ ] URL Encoder/Decoder
+### Phase 2 (✅ Completed)
+- [x] UUID Generator (v4/v7)
+- [x] URL Encoder/Decoder
+- [x] Command Palette (Ctrl+K)
+- [x] Smart Paste Detection
+
+### Phase 3 (Planned)
 - [ ] Text Diff Tool
 - [ ] Regex Tester
-- [ ] Image Compressor
-- [ ] Command Palette (Ctrl+K)
-- [ ] Smart Paste Detection
-
-### Phase 3 (Future)
 - [ ] QR Code Generator
 - [ ] Password Generator
 - [ ] Lorem Ipsum Generator
 - [ ] Color Picker & Converter
+
+### Phase 4 (Future)
+- [ ] Image Compressor
 - [ ] Cron Expression Builder
 - [ ] More encoding formats
 - [ ] Plugin system
