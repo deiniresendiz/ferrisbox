@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-rust-50: #FFF5F0;
   --color-rust-100: #FFE8DC;

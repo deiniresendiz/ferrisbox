@@ -70,10 +70,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentToolId, onSelectTool })
           <>
             {categories.map((category) => {
               const toolsInCategory = TOOLS.filter((tool) => tool.category === category);
+              const categoryName = category === 'utility' ? 'utilities' : `${category}s`;
               return (
                 <div key={category} className="p-4">
                   <h2 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                    {t(`sidebar.categories.${category}s`)}
+                    {t(`sidebar.categories.${categoryName}`)}
                   </h2>
                   {toolsInCategory.map((tool) => (
                     <button

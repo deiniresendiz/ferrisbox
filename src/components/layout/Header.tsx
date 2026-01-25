@@ -15,10 +15,24 @@ export const Header: React.FC<HeaderProps> = ({ currentTool, onToolChange }) => 
   const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
 
+  const languages = ['en', 'es', 'pt', 'zh'] as const;
+  const languageNames: Record<string, string> = {
+    en: 'English',
+    es: 'Español',
+    pt: 'Português',
+    zh: '中文',
+  };
+
   const handleSmartPasteDetection = (toolId: string) => {
     if (onToolChange) {
       onToolChange(toolId);
     }
+  };
+
+  const handleLanguageChange = () => {
+    const currentIndex = languages.indexOf(language as any);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    setLanguage(languages[nextIndex]);
   };
 
   return (
@@ -56,13 +70,13 @@ export const Header: React.FC<HeaderProps> = ({ currentTool, onToolChange }) => 
 
         <div className="relative">
           <button
-            onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
+            onClick={handleLanguageChange}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-space-600 transition-colors flex items-center gap-2"
-            title="Change language"
+            title={`Current: ${languageNames[language]}`}
           >
             <Languages className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-300 uppercase">
-              {language}
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+              {languageNames[language]}
             </span>
           </button>
         </div>

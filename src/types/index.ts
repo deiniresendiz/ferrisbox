@@ -7,7 +7,7 @@ export interface Config {
 
 export interface Preferences {
   theme: 'light' | 'dark';
-  language: string;
+  language: Language;
   auto_detect_clipboard: boolean;
 }
 
@@ -29,5 +29,7 @@ export interface Tool {
 }
 
 export type HashAlgorithm = 'SHA256' | 'MD5';
+
+export type Language = 'en' | 'es' | 'pt' | 'zh';
 
 export type ContentType = 'json' | 'base64' | 'uuid' | 'url' | 'hash' | 'unknown';
