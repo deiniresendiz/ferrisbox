@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-rust-50: #FFF5F0;
+  --color-rust-100: #FFE8DC;
+  --color-rust-200: #FFD1B9;
+  --color-rust-300: #FFBA96;
+  --color-rust-400: #FF8B5A;
+  --color-rust-500: #F74C00;
+  --color-rust-600: #C23800;
+  --color-rust-700: #8F2A00;
+  --color-rust-800: #5C1B00;
+  --color-rust-900: #290D00;
+
+  --color-space-50: #CBD5E1;
+  --color-space-100: #94A3B8;
+  --color-space-200: #64748B;
+  --color-space-300: #475569;
+  --color-space-400: #334155;
+  --color-space-500: #1E293B;
+  --color-space-600: #0F172A;
+  --color-space-700: #0A0F1C;
+  --color-space-800: #070B14;
+  --color-space-900: #03050A;
+}
+
+* {
+  @apply border-gray-200 dark:border-space-500;
+}
+
+body {
+  @apply bg-white dark:bg-space-600 text-gray-900 dark:text-gray-100;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-rust-500 hover:bg-rust-600 text-white;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 dark:bg-space-500 dark:hover:bg-space-400 text-gray-900 dark:text-gray-100;
+}
+
+.input {
+  @apply w-full px-3 py-2 bg-white dark:bg-space-700 border border-gray-300 dark:border-space-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-rust-500 dark:focus:ring-rust-400;
+}
+
+.card {
+  @apply bg-white dark:bg-space-700 border border-gray-200 dark:border-space-600 rounded-lg shadow-sm;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-space-700;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-space-500 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-space-400;
+}

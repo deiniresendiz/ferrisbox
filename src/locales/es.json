@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "FerrisBox",
+    "tagline": "La Navaja Suiza del Desarrollador"
+  },
+  "sidebar": {
+    "favorites": "Favoritos",
+    "allTools": "Todas las Herramientas",
+    "search": "Buscar herramientas...",
+    "categories": {
+      "encoders": "Codificadores",
+      "formatters": "Formateadores",
+      "generators": "Generadores",
+      "converters": "Convertidores",
+      "utilities": "Utilidades"
+    }
+  },
+  "tools": {
+    "jsonFormatter": {
+      "name": "Formateador JSON",
+      "description": "Formatear, validar y embellecer JSON",
+      "input": "JSON de entrada",
+      "output": "JSON formateado",
+      "actions": {
+        "format": "Formatear",
+        "minify": "Minificar",
+        "copy": "Copiar",
+        "clear": "Limpiar"
+      },
+      "errors": {
+        "invalidJson": "Sintaxis JSON inválida",
+        "empty": "Por favor ingresa algo de JSON"
+      }
+    },
+    "hashGenerator": {
+      "name": "Generador de Hashes",
+      "description": "Generar hashes criptográficos",
+      "input": "Texto o archivo de entrada",
+      "algorithm": "Algoritmo",
+      "output": "Hash resultante",
+      "actions": {
+        "generate": "Generar",
+        "copy": "Copiar",
+        "selectFile": "Seleccionar Archivo"
+      }
+    },
+    "base64Encoder": {
+      "name": "Codificador/Decodificador Base64",
+      "description": "Codificar o decodificar Base64",
+      "tabs": {
+        "encode": "Codificar",
+        "decode": "Decodificar"
+      },
+      "input": "Entrada",
+      "output": "Salida",
+      "actions": {
+        "encode": "Codificar",
+        "decode": "Decodificar",
+        "copy": "Copiar"
+      }
+    },
+    "regexTester": {
+      "name": "Probador de Regex",
+      "description": "Probar y validar expresiones regulares",
+      "pattern": "Patrón de Expresión Regular",
+      "testText": "Texto de Prueba",
+      "flags": {
+        "caseInsensitive": "Insensible a mayúsculas (i)"
+      },
+      "commonPatterns": "Patrones Comunes",
+      "results": {
+        "matches": "Coincidencias",
+        "match": "Coincidencia",
+        "found": "Encontrada(s)",
+        "highlighted": "Texto con Coincidencias Resaltadas",
+        "details": "Detalles de Coincidencias",
+        "position": "Posición",
+        "captureGroups": "Grupos de Captura",
+        "group": "Grupo"
+      },
+      "placeholder": {
+        "pattern": "Ingresa el patrón regex...",
+        "testText": "Ingresa texto para probar con el patrón...",
+        "empty": "Ingresa un patrón regex y texto de prueba para ver resultados"
+      },
+      "errors": {
+        "invalidPattern": "Patrón regex inválido"
+      }
+    }
+  },
+  "common": {
+    "copy": "Copiar",
+    "paste": "Pegar",
+    "clear": "Limpiar",
+    "error": "Error",
+    "success": "Éxito",
+    "copied": "¡Copiado al portapapeles!",
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro"
+    }
+  },
+  "commandPalette": {
+    "placeholder": "Buscar herramientas... (Ctrl+K)",
+    "noResults": "No se encontraron herramientas",
+    "recentlyUsed": "Usadas Recientemente"
+  }
+}
