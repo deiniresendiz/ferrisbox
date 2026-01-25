@@ -3,11 +3,23 @@ import { Moon, Sun, Languages } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { useTranslation } from 'react-i18next';
+import { SmartPasteButton } from '../common/SmartPasteButton';
 
-export const Header: React.FC<{ currentTool?: string }> = ({ currentTool }) => {
+interface HeaderProps {
+  currentTool?: string;
+  onToolChange?: (toolId: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ currentTool, onToolChange }) => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
+
+  const handleSmartPasteDetection = (toolId: string) => {
+    if (onToolChange) {
+      onToolChange(toolId);
+    }
+  };
 
   return (
     <header className="h-16 border-b border-gray-200 dark:border-space-500 bg-white dark:bg-space-700 flex items-center justify-between px-6">
@@ -28,6 +40,8 @@ export const Header: React.FC<{ currentTool?: string }> = ({ currentTool }) => {
       </div>
 
       <div className="flex items-center gap-2">
+        <SmartPasteButton onToolDetected={handleSmartPasteDetection} />
+        
         <button
           onClick={toggleTheme}
           className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-space-600 transition-colors"

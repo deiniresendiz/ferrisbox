@@ -11,6 +11,7 @@ pub fn run() {
     
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_clipboard_manager::init())
         .invoke_handler(tauri::generate_handler![
             // Storage commands
             storage_commands::get_config,
@@ -23,9 +24,14 @@ pub fn run() {
             formatters::validate_json_command,
             // Generator commands
             generators::generate_hash_command,
+            generators::generate_uuid_command,
+            generators::generate_multiple_uuids_command,
+            generators::validate_uuid_command,
             // Encoder commands
             encoders::encode_base64_command,
             encoders::decode_base64_command,
+            encoders::encode_url_command,
+            encoders::decode_url_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])

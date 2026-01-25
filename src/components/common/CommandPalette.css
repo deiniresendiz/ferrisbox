@@ -1,0 +1,229 @@
+/* Command Palette Overlay */
+.command-palette-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Command Palette Container */
+.command-palette {
+  width: 100%;
+  max-width: 640px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark .command-palette {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+}
+
+/* Input Wrapper */
+.command-input-wrapper {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 16px;
+}
+
+.dark .command-input-wrapper {
+  border-bottom-color: #334155;
+}
+
+/* Command Input */
+.command-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #111827;
+  padding: 4px 0;
+}
+
+.dark .command-input {
+  color: #f3f4f6;
+}
+
+.command-input::placeholder {
+  color: #9ca3af;
+}
+
+.dark .command-input::placeholder {
+  color: #6b7280;
+}
+
+/* Command List */
+.command-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* Command Group */
+.command-group {
+  margin-bottom: 8px;
+}
+
+.command-group:last-child {
+  margin-bottom: 0;
+}
+
+.command-group [cmdk-group-heading] {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 12px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dark .command-group [cmdk-group-heading] {
+  color: #9ca3af;
+}
+
+/* Command Item */
+.command-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.command-item:hover,
+.command-item[aria-selected="true"] {
+  background-color: #f3f4f6;
+}
+
+.dark .command-item:hover,
+.dark .command-item[aria-selected="true"] {
+  background-color: #334155;
+}
+
+/* Command Item Icon */
+.command-item-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.dark .command-item-icon {
+  color: #9ca3af;
+}
+
+.command-item[aria-selected="true"] .command-item-icon {
+  color: #f74c00;
+}
+
+/* Command Item Content */
+.command-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.command-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dark .command-item-title {
+  color: #f3f4f6;
+}
+
+.command-item-description {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dark .command-item-description {
+  color: #9ca3af;
+}
+
+/* Command Item Badge */
+.command-item-badge {
+  width: 16px;
+  height: 16px;
+  color: #fbbf24;
+  flex-shrink: 0;
+}
+
+/* Command Empty */
+.command-empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.dark .command-empty {
+  color: #9ca3af;
+}
+
+/* Scrollbar */
+.command-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.command-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.command-list::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 4px;
+}
+
+.dark .command-list::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+}
+
+.command-list::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+}
+
+.dark .command-list::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}

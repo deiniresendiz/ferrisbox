@@ -1191,6 +1191,7 @@ dependencies = [
  "log",
  "md-5",
  "once_cell",
+ "percent-encoding",
  "rayon",
  "regex",
  "serde",
@@ -1202,6 +1203,7 @@ dependencies = [
  "tauri-plugin-opener",
  "tempfile",
  "thiserror 1.0.69",
+ "uuid",
 ]
 
 [[package]]
