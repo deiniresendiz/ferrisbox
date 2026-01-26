@@ -30,6 +30,13 @@ log = "0.4"
 env_logger = "0.11"
 uuid = { version = "1.11", features = ["v4", "v7", "serde"] }
 percent-encoding = "2.3"
+# GRUPO 1: Encoders básicos
+hex = "0.4"
+html-escape = "0.2"
+# GRUPO 2: Herramientas avanzadas
+jsonwebtoken = "9"
+flate2 = "1.0"
+idna = "0.5"
 
 [dev-dependencies]
 criterion = "0.5"

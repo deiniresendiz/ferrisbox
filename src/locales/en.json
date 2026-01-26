@@ -86,6 +86,157 @@
       "errors": {
         "invalidPattern": "Invalid regex pattern"
       }
+    },
+    "hexConverter": {
+      "name": "Hex Converter",
+      "description": "Convert between text and hexadecimal",
+      "input": "Input",
+      "output": "Output",
+      "tabs": {
+        "textToHex": "Text → Hex",
+        "hexToText": "Hex → Text"
+      },
+      "placeholder": {
+        "text": "Enter text to convert...",
+        "hex": "Enter hex (e.g., 48656c6c6f, 0x48656c6c6f)..."
+      },
+      "examples": "Examples",
+      "errors": {
+        "invalidHex": "Invalid hexadecimal characters"
+      }
+    },
+    "htmlEntities": {
+      "name": "HTML Entities Encoder",
+      "description": "Encode/decode HTML special characters",
+      "input": "Input",
+      "output": "Output",
+      "tabs": {
+        "encode": "Encode",
+        "decode": "Decode"
+      },
+      "formats": {
+        "named": "Named (&lt;)",
+        "numeric": "Numeric (&#60;)",
+        "hex": "Hex (&#x3C;)"
+      },
+      "placeholder": {
+        "text": "Enter text to encode...",
+        "encoded": "Enter HTML entities to decode..."
+      },
+      "examples": "Examples"
+    },
+    "jwtDebugger": {
+      "name": "JWT Debugger",
+      "description": "Decode and validate JWT tokens offline",
+      "token": "JWT Token",
+      "header": "Header",
+      "payload": "Payload",
+      "signature": "Signature",
+      "validate": "Validate Signature",
+      "validationMode": "Validation Mode",
+      "modes": {
+        "none": "None (decode only)",
+        "hmac": "HMAC (HS256/384/512)",
+        "rsa": "RSA (RS256/384/512)"
+      },
+      "secret": "Secret Key",
+      "publicKey": "Public Key (PEM format)",
+      "algorithm": "Algorithm",
+      "status": {
+        "valid": "✓ Valid Signature",
+        "invalid": "✗ Invalid Signature",
+        "notValidated": "Not Validated"
+      },
+      "warning": "⚠️ Tokens are decoded locally and never sent to any server",
+      "placeholder": {
+        "token": "Paste JWT token here (e.g., eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...)",
+        "secret": "Enter HMAC secret key...",
+        "publicKey": "-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----"
+      }
+    },
+    "gzipCompressor": {
+      "name": "GZip Compressor",
+      "description": "Compress and decompress data with GZip/Zlib",
+      "tabs": {
+        "compress": "Compress",
+        "decompress": "Decompress"
+      },
+      "format": "Format",
+      "formats": {
+        "gzip": "GZip",
+        "zlib": "Zlib"
+      },
+      "compressionLevel": "Compression Level",
+      "levels": {
+        "1": "1 - Fastest",
+        "6": "6 - Default",
+        "9": "9 - Best"
+      },
+      "stats": {
+        "originalSize": "Original Size",
+        "compressedSize": "Compressed Size",
+        "ratio": "Compression Ratio",
+        "savings": "Space Savings"
+      },
+      "placeholder": {
+        "compress": "Enter text to compress...",
+        "decompress": "Paste base64-encoded compressed data..."
+      },
+      "input": "Input",
+      "output": "Output (Base64)"
+    },
+    "punycodeEncoder": {
+      "name": "Punycode Encoder",
+      "description": "Encode/decode internationalized domain names (IDN)",
+      "tabs": {
+        "encode": "Encode (Unicode → ASCII)",
+        "decode": "Decode (ASCII → Unicode)"
+      },
+      "input": "Input",
+      "output": "Output",
+      "examples": "Examples",
+      "placeholder": {
+        "unicode": "e.g., münchen.de, español.com, 中国.cn",
+        "punycode": "e.g., xn--mnchen-3ya.de, xn--espaol-zwa.com"
+      },
+      "info": {
+        "encode": "Converts Unicode domain names to ASCII-compatible encoding (Punycode)",
+        "decode": "Converts Punycode domain names back to Unicode"
+      }
+    },
+    "morseCode": {
+      "name": "Morse Code",
+      "description": "Encode/decode text to Morse code",
+      "tabs": {
+        "encode": "Text → Morse",
+        "decode": "Morse → Text"
+      },
+      "input": "Input",
+      "output": "Output",
+      "examples": "Examples",
+      "placeholder": {
+        "text": "Enter text to encode...",
+        "morse": "Enter morse code (e.g., ... --- ...)"
+      },
+      "info": {
+        "encode": "Words separated by \" / \", letters by space. Supports A-Z, 0-9, and punctuation (.,?!'\"();:=+-_@&/)",
+        "decode": "Use \" / \" to separate words and space to separate letters"
+      }
+    },
+    "base64Image": {
+      "name": "Base64 Image Encoder",
+      "description": "Convert images to Base64 data URLs",
+      "tabs": {
+        "encode": "Encode",
+        "decode": "Decode"
+      },
+      "selectFile": "Select Image",
+      "preview": "Preview",
+      "download": "Download Image",
+      "dataUrl": "Data URL (Base64)",
+      "noImage": "No image selected",
+      "placeholder": "data:image/png;base64,iVBORw0KGgo... or select an image file",
+      "info": "Select an image file to encode to Base64, or paste a Base64 data URL to preview and download"
     }
   },
   "common": {
@@ -95,6 +246,11 @@
     "error": "Error",
     "success": "Success",
     "copied": "Copied to clipboard!",
+    "convert": "Convert",
+    "encode": "Encode",
+    "decode": "Decode",
+    "compress": "Compress",
+    "decompress": "Decompress",
     "theme": {
       "light": "Light",
       "dark": "Dark"
