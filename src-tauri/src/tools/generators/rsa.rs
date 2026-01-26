@@ -1,4 +1,5 @@
-use rsa::{RsaPrivateKey, RsaPublicKey, pkcs8::ToPrivateKey};
+use rsa::{RsaPrivateKey, RsaPublicKey};
+use rsa::pkcs8::{EncodePrivateKey, EncodePublicKey, LineEnding};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -25,8 +26,14 @@ pub fn generate_rsa_key_pair(key_size: &RsaKeySize) -> RsaKeyPair {
     let private_key = RsaPrivateKey::new(&mut rng, bits).unwrap();
     let public_key = RsaPublicKey::from(&private_key);
     
-    let private_pem = private_key.to_pkcs8_pem(Default::default()).unwrap();
-    let public_pem = public_key.to_public_key_pem(Default::default());
+    let private_pem = private_key
+        .to_pkcs8_pem(LineEnding::LF)
+        .unwrap()
+        .to_string();
+    let public_pem = public_key
+        .to_public_key_pem(LineEnding::LF)
+        .unwrap()
+        .to_string();
     
     RsaKeyPair {
         public_key_pem: public_pem,

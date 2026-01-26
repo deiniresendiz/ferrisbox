@@ -31,8 +31,7 @@ const LOREM_WORDS: &[&str] = &[
 ];
 
 pub fn generate_lorem(lorem_type: &LoremType, count: usize) -> LoremOutput {
-    let rng = &mut rand::thread_rng();
-    let mut word_list: Vec<String> = LOREM_WORDS.iter().map(|s| s.to_string()).collect();
+    let word_list: Vec<String> = LOREM_WORDS.iter().map(|s| s.to_string()).collect();
     
     let (text, word_count, paragraph_count) = match lorem_type {
         LoremType::Paragraphs => {

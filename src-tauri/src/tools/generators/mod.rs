@@ -14,7 +14,7 @@ pub use uuid::{UuidVersion, generate_uuid, generate_multiple_uuids, validate_uui
 pub use lorem::{LoremType, LoremOutput, generate_lorem};
 pub use password::{PasswordOptions, PasswordOutput, generate_password};
 pub use hmac::{HmacAlgorithm, generate_hmac};
-pub use qrcode::{QrType, QrOutput, WifiCredentials, generate_qr_code, generate_wifi_qr};
+pub use qrcode::{generate_qr_code, generate_wifi_qr, QrOutput, WifiCredentials};
 pub use gitignore::{GitignoreTemplate, generate_gitignore};
 pub use rsa::{RsaKeySize, RsaKeyPair, generate_rsa_key_pair};
 pub use bcrypt::{BcryptHashOutput, bcrypt_hash, bcrypt_verify};

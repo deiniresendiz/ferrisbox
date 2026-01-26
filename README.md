@@ -1,43 +1,78 @@
 # FerrisBox 🦀📦
 
-**The Developer's Swiss Army Knife** - A blazing-fast, privacy-first developer toolkit built with Rust and Tauri.
+**The Developer's Swiss Army Knife** - A blazing-fast, privacy-first desktop toolkit built with Rust and Tauri.
 
-![FerrisBox Logo](public/logo.svg)
+[![Rust](https://img.shields.io/badge/rust-1.80+-orange.svg)](https://www.rust-lang.org/)
+[![Tauri](https://img.shields.io/badge/tauri-2.0-blue.svg)](https://tauri.app/)
+[![React](https://img.shields.io/badge/react-18-cyan.svg)](https://react.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## Features
+## 🎯 Overview
 
-FerrisBox is a desktop application that provides essential developer tools with maximum performance and privacy. All processing happens locally on your machine.
+FerrisBox is a powerful desktop application that provides essential developer tools with maximum performance and complete privacy. All processing happens locally on your machine - no data ever leaves your device.
 
-### Current Tools (Phase 3)
-
-- **JSON Formatter** - Format, validate, and beautify JSON with syntax highlighting
-- **Hash Generator** - Generate SHA-256 and MD5 hashes
-- **Base64 Encoder/Decoder** - Encode and decode Base64 strings
-- **UUID Generator** - Generate v4 (random) or v7 (timestamp-based) UUIDs
-- **URL Encoder/Decoder** - Encode and decode URL strings with percent-encoding
-- **Regex Tester** - Test and validate regular expressions with match highlighting
-
-### Key Features
+## ✨ Features
 
 - ⚡ **Blazing Fast** - Built with Rust for maximum performance
 - 🔒 **Privacy First** - All processing happens locally, no data leaves your machine
-- 🌍 **Multi-language** - Supports English, Spanish, Portuguese, and Chinese
+- 🌍 **Multi-language** - Supports English and Spanish
 - 🎨 **Dark/Light Mode** - Beautiful UI with theme switching
-- ⭐ **Favorites** - Mark your most-used tools
+- ⭐ **Favorites** - Mark your most-used tools for quick access
 - 🔍 **Quick Search** - Find tools instantly with Command Palette (Ctrl+K)
 - 🧠 **Smart Paste** - Auto-detect clipboard content and suggest the right tool
 - 📦 **Lightweight** - Small binary size thanks to Tauri
 
-## Tech Stack
+## 🛠️ Available Tools
 
-- **Backend**: Rust (for blazing-fast tool implementations)
-- **Desktop Framework**: Tauri 2.x (lightweight alternative to Electron)
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: React Context API
-- **i18n**: react-i18next
+### Formatters 📝
 
-## Development
+| Tool                     | Description                               | Features                                      |
+| ------------------------ | ----------------------------------------- | --------------------------------------------- |
+| **JSON Formatter**       | Format, validate and beautify JSON        | Syntax highlighting, minification, validation |
+| **XML Formatter**        | Format, validate and beautify XML         | Proper indentation, validation                |
+| **SQL Formatter**        | Format SQL with multiple dialect support  | PostgreSQL, MySQL, SQLite compatible          |
+| **CSS Formatter**        | Format, validate and beautify CSS/SCSS    | Minification, style validation                |
+| **JavaScript Formatter** | Format and validate JavaScript/TypeScript | Pretty print, syntax checking                 |
+| **YAML Formatter**       | Format, validate and beautify YAML        | Config file formatting                        |
+| **Rust Formatter**       | Format and validate Rust code             | Uses rustfmt, syntax validation               |
+
+### Encoders & Decoders 🔐
+
+| Tool                       | Description                           | Features                 |
+| -------------------------- | ------------------------------------- | ------------------------ |
+| **Base64 Encoder/Decoder** | Encode or decode Base64 strings       | Text and binary support  |
+| **URL Encoder/Decoder**    | Encode or decode URL strings          | Percent-encoding support |
+| **Hex Converter**          | Convert between text and hexadecimal  | Binary representation    |
+| **HTML Entities Encoder**  | Encode/decode HTML special characters | XSS prevention           |
+| **Punycode Encoder**       | Encode internationalized domain names | IDN to ASCII conversion  |
+| **Morse Code**             | Encode/decode text to Morse code      | Signal representation    |
+| **Base64 Image Encoder**   | Convert images to Base64 data URLs    | PNG, JPG support         |
+
+### Generators 🎲
+
+| Tool                          | Description                                | Features                |
+| ----------------------------- | ------------------------------------------ | ----------------------- |
+| **UUID Generator**            | Generate UUIDs (v4 random or v7 timestamp) | Multiple formats        |
+| **Lorem Ipsum Generator**     | Generate placeholder text for designs      | Configurable length     |
+| **Secure Password Generator** | Generate strong passwords with entropy     | Customizable complexity |
+| **HMAC Generator**            | Generate HMAC signatures for API testing   | SHA-256, SHA-1 support  |
+| **QR Code Generator**         | Generate QR codes for URLs and WiFi        | PNG export              |
+| **.gitignore Generator**      | Generate .gitignore files for any project  | Multiple templates      |
+| **RSA Key Pair Generator**    | Generate RSA public and private keys       | PEM format              |
+| **Bcrypt Tester**             | Hash and verify passwords with Bcrypt      | Security testing        |
+| **Git Branch Name Generator** | Convert task titles to branch names        | Kebab-case conversion   |
+
+### Utilities 🧰
+
+| Tool                | Description                                  | Features                   |
+| ------------------- | -------------------------------------------- | -------------------------- |
+| **Hash Generator**  | Generate cryptographic hashes (SHA-256, MD5) | Checksum generation        |
+| **Regex Tester**    | Test and validate regular expressions        | Match highlighting         |
+| **JWT Debugger**    | Decode and validate JWT tokens offline       | Header, payload, signature |
+| **GZip Compressor** | Compress and decompress with GZip/Zlib       | Archive support            |
+| **URL Parser**      | Parse URLs and edit query parameters         | Parameter editing          |
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -45,9 +80,13 @@ FerrisBox is a desktop application that provides essential developer tools with 
 - [Rust](https://www.rust-lang.org/) (latest stable)
 - [Tauri Prerequisites](https://tauri.app/v2/guides/prerequisites/)
 
-### Setup
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/ferrisbox.git
+cd ferrisbox
+
 # Install dependencies
 npm install
 
@@ -58,30 +97,35 @@ npm run tauri dev
 npm run tauri build
 ```
 
-### Project Structure
+## 📁 Project Structure
 
 ```
 ferrisbox/
 ├── src/                    # React frontend
 │   ├── components/         # React components
-│   │   ├── layout/        # Layout components
-│   │   ├── common/        # Shared components
+│   │   ├── layout/        # Layout components (Header, Sidebar, etc.)
+│   │   ├── common/        # Shared components (Button, Input, etc.)
 │   │   └── tools/         # Tool implementations
-│   ├── contexts/          # React contexts
+│   ├── contexts/          # React contexts (Theme, Favorites, etc.)
 │   ├── hooks/             # Custom hooks
-│   ├── lib/               # Utilities
-│   ├── locales/           # Translations
-│   └── types/             # TypeScript types
+│   ├── lib/               # Utilities and helpers
+│   ├── locales/           # Translations (en.json, es.json)
+│   └── types/             # TypeScript type definitions
 ├── src-tauri/             # Rust backend
 │   └── src/
-│       ├── commands/      # Tauri commands
-│       ├── tools/         # Tool implementations
-│       ├── storage/       # Config persistence
-│       └── utils/         # Utilities
-└── public/                # Static assets
+│       ├── commands/      # Tauri command wrappers
+│       ├── tools/         # Core tool implementations
+│       │   ├── encoders/  # Encoding tools
+│       │   ├── formatters/ # Formatting tools
+│       │   ├── generators/ # Generation tools
+│       │   ├── utilities/  # Utility tools
+│       │   └── converters/ # Conversion tools
+│       ├── storage/       # Configuration persistence
+│       └── utils/         # Helper functions
+└── public/                # Static assets (logo, icons, etc.)
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 FerrisBox stores your preferences locally at:
 
@@ -89,56 +133,157 @@ FerrisBox stores your preferences locally at:
 - **Windows**: `%APPDATA%\ferrisbox\config.json`
 
 The configuration includes:
+
 - Theme preference (light/dark)
 - Language selection
 - Favorite tools
 - Recent tools
 
-## Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts
 
-- `Ctrl+K` (Cmd+K on Mac) - Open Command Palette for instant tool search
-- `Ctrl+,` - Open settings *(coming soon)*
+| Shortcut                | Action                                       |
+| ----------------------- | -------------------------------------------- |
+| `Ctrl+K` (Cmd+K on Mac) | Open Command Palette for instant tool search |
+| `Ctrl+,`                | Open settings _(coming soon)_                |
 
-## Roadmap
+## 🛠️ Tech Stack
+
+### Backend
+
+- **Rust** - High-performance tool implementations
+- **Tauri 2.x** - Lightweight desktop framework
+- **Serde** - Serialization/deserialization
+
+### Frontend
+
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
+- **react-i18next** - Internationalization
+
+## 🗺️ Roadmap
+
+### Phase 1 (✅ Completed)
+
+- [x] JSON Formatter
+- [x] Hash Generator
+- [x] Base64 Encoder/Decoder
+- [x] Basic UI with dark mode
+- [x] Multi-language support
 
 ### Phase 2 (✅ Completed)
+
 - [x] UUID Generator (v4/v7)
 - [x] URL Encoder/Decoder
 - [x] Command Palette (Ctrl+K)
 - [x] Smart Paste Detection
 
 ### Phase 3 (✅ Completed)
+
 - [x] Regex Tester
+- [x] Additional encoders (Hex, HTML Entities, Punycode, Morse)
+- [x] JWT Debugger
+- [x] GZip Compressor
 
-### Phase 4 (Planned)
+### Phase 4 (✅ Completed)
+
+- [x] XML, SQL, CSS, JavaScript, YAML, Rust Formatters
+- [x] QR Code Generator
+- [x] Password Generator
+- [x] Lorem Ipsum Generator
+- [x] HMAC Generator
+- [x] .gitignore Generator
+- [x] RSA Key Pair Generator
+- [x] Bcrypt Tester
+- [x] Git Branch Name Generator
+- [x] URL Parser
+- [x] Base64 Image Encoder
+
+### Phase 5 (Planned)
+
 - [ ] Text Diff Tool
-- [ ] QR Code Generator
-- [ ] Password Generator
-- [ ] Lorem Ipsum Generator
 - [ ] Color Picker & Converter
-
-### Phase 5 (Future)
-- [ ] Image Compressor
+- [ ] Timestamp Converter
 - [ ] Cron Expression Builder
+- [ ] Number Base Converter
+- [ ] Unit Converter (Data, Time, Frequency)
+- [ ] Markdown to HTML Converter
+- [ ] JSON/YAML Converter
+- [ ] CSV to JSON Converter
+
+### Phase 6 (Future)
+
+- [ ] Image Compressor
 - [ ] More encoding formats
 - [ ] Plugin system
+- [ ] Custom tool builder
+- [ ] Cloud sync for settings (optional)
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-MIT License - see LICENSE file for details
+## 📝 Development
 
-## Credits
+### Running Tests
+
+```bash
+# Frontend tests
+npm test
+
+# Backend tests
+cd src-tauri && cargo test
+
+# Run tests with output
+cd src-tauri && cargo test -- --nocapture
+```
+
+### Code Quality
+
+```bash
+# Lint TypeScript
+npm run lint
+
+# Format TypeScript/React
+npm run format
+
+# Format Rust
+cd src-tauri && cargo fmt
+
+# Lint Rust
+cd src-tauri && cargo clippy
+```
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details
+
+## 🙏 Credits
 
 Built with ❤️ using:
-- [Rust](https://www.rust-lang.org/)
-- [Tauri](https://tauri.app/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
+
+- [Rust](https://www.rust-lang.org/) - Systems programming language
+- [Tauri](https://tauri.app/) - Build smaller, faster, and more secure desktop applications
+- [React](https://react.dev/) - The library for web and native user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- [Lucide](https://lucide.dev/) - Beautiful & consistent icon toolkit
+
+## 📊 Stats
+
+- **Total Tools**: 27
+- **Categories**: 4 (Formatters, Encoders, Generators, Utilities)
+- **Languages**: 2 (English, Spanish)
+- **Themes**: 2 (Light, Dark)
 
 ---
 
-**FerrisBox** - Rust-powered tools for developers
+**FerrisBox** - 🦀 Rust-powered tools for developers
+
+Made with ❤️ by [FerrisBox Team](https://github.com/yourusername/ferrisbox)

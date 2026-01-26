@@ -1,11 +1,8 @@
 use hmac::{Hmac, Mac};
 use serde::{Deserialize, Serialize};
 use sha1::Sha1;
-use sha2::{Digest, Sha256, Sha512};
-
-type HmacSha1 = Hmac<Sha1>;
-type HmacSha256 = Hmac<Sha256>;
-type HmacSha512 = Hmac<Sha512>;
+use sha2::Sha256;
+use sha2::Sha512;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "UPPERCASE")]
@@ -21,22 +18,28 @@ pub fn generate_hmac(
     algorithm: &HmacAlgorithm,
 ) -> Result<String, String> {
     match algorithm {
-        HmacAlgorithm::SHA1 => generate_hmac_impl::<HmacSha1>(message, secret),
-        HmacAlgorithm::SHA256 => generate_hmac_impl::<HmacSha256>(message, secret),
-        HmacAlgorithm::SHA512 => generate_hmac_impl::<HmacSha512>(message, secret),
+        HmacAlgorithm::SHA1 => {
+            let mut mac = Hmac::<Sha1>::new_from_slice(secret.as_bytes())
+                .map_err(|e| e.to_string())?;
+            mac.update(message.as_bytes());
+            let result = mac.finalize();
+            Ok(hex::encode(result.into_bytes()))
+        }
+        HmacAlgorithm::SHA256 => {
+            let mut mac = Hmac::<Sha256>::new_from_slice(secret.as_bytes())
+                .map_err(|e| e.to_string())?;
+            mac.update(message.as_bytes());
+            let result = mac.finalize();
+            Ok(hex::encode(result.into_bytes()))
+        }
+        HmacAlgorithm::SHA512 => {
+            let mut mac = Hmac::<Sha512>::new_from_slice(secret.as_bytes())
+                .map_err(|e| e.to_string())?;
+            mac.update(message.as_bytes());
+            let result = mac.finalize();
+            Ok(hex::encode(result.into_bytes()))
+        }
     }
-}
-
-fn generate_hmac_impl<D: Mac + Digest>(
-    message: &str,
-    secret: &str,
-) -> Result<String, String> {
-    let mut mac = D::new_from_slice(secret.as_bytes())
-        .map_err(|e| e.to_string())?;
-    mac.update(message.as_bytes());
-    let result = mac.finalize();
-    let code_bytes = result.into_bytes();
-    Ok(format!("{:x}", Digest::finalize(&code_bytes)))
 }
 
 #[cfg(test)]

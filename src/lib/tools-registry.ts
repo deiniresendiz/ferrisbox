@@ -18,6 +18,11 @@ import {
   FileJson2,
   FileCode2,
   Wrench,
+  FileText,
+  KeySquare,
+  ScanLine,
+  Lock,
+  GitBranch,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -43,6 +48,14 @@ import { CssFormatter } from '../components/tools/CssFormatter';
 import { JsFormatter } from '../components/tools/JsFormatter';
 import { YamlFormatter } from '../components/tools/YamlFormatter';
 import { RustFormatter } from '../components/tools/RustFormatter';
+import { LoremIpsumGenerator } from '../components/tools/LoremIpsumGenerator';
+import { SecurePasswordGenerator } from '../components/tools/SecurePasswordGenerator';
+import { HmacGenerator } from '../components/tools/HmacGenerator';
+import { QrCodeGenerator } from '../components/tools/QrCodeGenerator';
+import { GitignoreGenerator } from '../components/tools/GitignoreGenerator';
+import { RsaKeyPairGenerator } from '../components/tools/RsaKeyPairGenerator';
+import { BcryptTester } from '../components/tools/BcryptTester';
+import { GitBranchNameGenerator } from '../components/tools/GitBranchNameGenerator';
 
 export const TOOLS: Tool[] = [
   {
@@ -233,6 +246,78 @@ export const TOOLS: Tool[] = [
     keywords: ['url', 'parse', 'query', 'parameters', 'params', 'uri', 'decode', 'analyze'],
     component: UrlParser,
     icon: SplitSquareHorizontal as LucideIcon,
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    category: 'generator',
+    description: 'Generate placeholder text for designs',
+    keywords: ['lorem', 'ipsum', 'placeholder', 'text', 'filler'],
+    component: LoremIpsumGenerator,
+    icon: FileText as LucideIcon,
+  },
+  {
+    id: 'secure-password-generator',
+    name: 'Secure Password Generator',
+    category: 'generator',
+    description: 'Generate strong passwords with entropy',
+    keywords: ['password', 'secure', 'generator', 'entropy', 'strength'],
+    component: SecurePasswordGenerator,
+    icon: Shield as LucideIcon,
+  },
+  {
+    id: 'hmac-generator',
+    name: 'HMAC Generator',
+    category: 'generator',
+    description: 'Generate HMAC signatures for API testing',
+    keywords: ['hmac', 'signature', 'api', 'auth', 'sha'],
+    component: HmacGenerator,
+    icon: KeySquare as LucideIcon,
+  },
+  {
+    id: 'qr-code-generator',
+    name: 'QR Code Generator',
+    category: 'generator',
+    description: 'Generate QR codes for URLs and WiFi',
+    keywords: ['qr', 'code', 'wifi', 'url', 'barcode'],
+    component: QrCodeGenerator,
+    icon: ScanLine as LucideIcon,
+  },
+  {
+    id: 'gitignore-generator',
+    name: '.gitignore Generator',
+    category: 'generator',
+    description: 'Generate .gitignore files for any project',
+    keywords: ['git', 'gitignore', 'template', 'version control'],
+    component: GitignoreGenerator,
+    icon: FileCode2 as LucideIcon,
+  },
+  {
+    id: 'rsa-key-pair-generator',
+    name: 'RSA Key Pair Generator',
+    category: 'generator',
+    description: 'Generate RSA public and private keys',
+    keywords: ['rsa', 'key', 'pair', 'crypto', 'public', 'private', 'pem'],
+    component: RsaKeyPairGenerator,
+    icon: Lock as LucideIcon,
+  },
+  {
+    id: 'bcrypt-tester',
+    name: 'Bcrypt Tester',
+    category: 'generator',
+    description: 'Hash and verify passwords with Bcrypt',
+    keywords: ['bcrypt', 'password', 'hash', 'verify', 'security'],
+    component: BcryptTester,
+    icon: Shield as LucideIcon,
+  },
+  {
+    id: 'git-branch-name-generator',
+    name: 'Git Branch Name Generator',
+    category: 'generator',
+    description: 'Convert task titles to branch names',
+    keywords: ['git', 'branch', 'kebab-case', 'name', 'naming'],
+    component: GitBranchNameGenerator,
+    icon: GitBranch as LucideIcon,
   },
 ];
 

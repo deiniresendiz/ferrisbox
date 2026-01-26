@@ -1,7 +1,7 @@
 use crate::tools::generators::{
     bcrypt_hash, bcrypt_verify, generate_all_hashes, generate_git_branch_name, generate_gitignore,
-    generate_hmac, generate_lorem, generate_password, generate_qr_code, generate_wifi_qr,
-    generate_rsa_key_pair, generate_uuid, generate_multiple_uuids, validate_uuid,
+    generate_hmac, generate_lorem, generate_password, generate_uuid, generate_multiple_uuids, validate_uuid,
+    generate_qr_code, generate_wifi_qr, generate_rsa_key_pair,
     BcryptHashOutput, BranchNameOutput, GitignoreTemplate, HmacAlgorithm, LoremOutput,
     MultiHash, PasswordOutput, QrOutput, RsaKeyPair, RsaKeySize, UuidVersion,
     WifiCredentials,

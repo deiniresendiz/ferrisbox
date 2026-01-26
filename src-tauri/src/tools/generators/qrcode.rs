@@ -1,13 +1,7 @@
-use base64::Engine;
 use qrcode::QrCode;
+use base64::{Engine, engine::general_purpose};
+use image::{ImageEncoder};
 use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "lowercase")]
-pub enum QrType {
-    Text,
-    Wifi,
-}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct QrOutput {
@@ -45,8 +39,7 @@ pub fn generate_wifi_qr(creds: &WifiCredentials) -> QrOutput {
 }
 
 fn generate_svg(code: &QrCode) -> String {
-    let image = code.render::<qrcode::render::svg::Color>();
-    image.build()
+    code.render::<qrcode::render::svg::Color>().build()
 }
 
 fn generate_png(code: &QrCode) -> String {
@@ -77,12 +70,12 @@ fn generate_png(code: &QrCode) -> String {
     let encoder = image::codecs::png::PngEncoder::new(&mut buffer);
     encoder.write_image(
         image.as_raw(),
-        size as u32,
-        size as u32,
+        image.width(),
+        image.height(),
         image::ExtendedColorType::L8,
     ).unwrap();
-    
-    base64::engine::general_purpose::STANDARD.encode(buffer)
+    let png_data_url = general_purpose::STANDARD.encode(&buffer);
+    format!("data:image/png;base64,{}", png_data_url)
 }
 
 #[cfg(test)]
@@ -124,5 +117,6 @@ mod tests {
         };
         let result = generate_wifi_qr(&creds);
         assert!(!result.svg.is_empty());
+        assert!(!result.png_data_url.is_empty());
     }
 }

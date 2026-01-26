@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
-use uuid::{Uuid, Context, Timestamp};
+use uuid::{Uuid, Timestamp, Context};
+use rand::Rng;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "lowercase")]
@@ -12,8 +13,11 @@ pub enum UuidVersion {
 pub fn generate_uuid(version: &UuidVersion) -> String {
     match version {
         UuidVersion::V1 => {
-            let context = Context::new(0, 0);
-            Uuid::new_v1(&context, Timestamp::now(0, 0)).to_string()
+            let context = Context::new(0);
+            let timestamp = Timestamp::now(context);
+            let mut node_id = [0u8; 6];
+            rand::thread_rng().fill(&mut node_id);
+            Uuid::new_v1(timestamp, &node_id).to_string()
         }
         UuidVersion::V4 => Uuid::new_v4().to_string(),
         UuidVersion::V7 => Uuid::now_v7().to_string(),

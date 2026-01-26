@@ -374,6 +374,165 @@
       "key": "key",
       "value": "value",
       "rebuiltUrl": "Rebuilt URL"
+    },
+    "loremIpsumGenerator": {
+      "name": "Lorem Ipsum Generator",
+      "description": "Generate placeholder text for designs",
+      "type": "Type",
+      "paragraphs": "Paragraphs",
+      "words": "Words",
+      "count": "Count",
+      "generate": "Generate",
+      "copy": "Copy",
+      "wordCount": "Word Count",
+      "paragraphCount": "Paragraph Count",
+      "placeholders": {
+        "text": "Placeholder text will appear here..."
+      }
+    },
+    "securePasswordGenerator": {
+      "name": "Secure Password Generator",
+      "description": "Generate strong passwords with entropy",
+      "length": "Length",
+      "uppercase": "Uppercase (A-Z)",
+      "lowercase": "Lowercase (a-z)",
+      "numbers": "Numbers (0-9)",
+      "symbols": "Symbols (!@#$%...)",
+      "generate": "Generate Password",
+      "regenerate": "Regenerate",
+      "copy": "Copy Password",
+      "entropy": "Entropy",
+      "bits": "bits",
+      "strength": "Strength",
+      "strengthLevels": {
+        "weak": "Weak",
+        "moderate": "Moderate",
+        "strong": "Strong",
+        "veryStrong": "Very Strong"
+      },
+      "history": "Recent Passwords",
+      "show": "Show",
+      "hide": "Hide"
+    },
+    "hmacGenerator": {
+      "name": "HMAC Generator",
+      "description": "Generate HMAC signatures for API testing",
+      "message": "Message",
+      "secret": "Secret Key",
+      "algorithm": "Algorithm",
+      "generate": "Generate HMAC",
+      "output": "HMAC Output",
+      "copy": "Copy",
+      "usage": "Usage",
+      "usageText": "Use HMAC to verify data integrity and authenticate API requests. Common in JWT signing and API authentication."
+    },
+    "qrCodeGenerator": {
+      "name": "QR Code Generator",
+      "description": "Generate QR codes for URLs and WiFi",
+      "urlText": "Text or URL",
+      "placeholder": "https://example.com or any text...",
+      "wifi": {
+        "title": "WiFi Network",
+        "ssid": "SSID (Network Name)",
+        "password": "Password (Optional for open networks)",
+        "passwordPlaceholder": "•••••••••",
+        "encryption": "Encryption Type",
+        "encryptionTypes": {
+          "wep": "WEP",
+          "wpa": "WPA/WPA2",
+          "nopass": "No Password"
+        },
+        "info": "WiFi QR Code",
+        "infoText": "Scan this QR code with your phone to automatically connect to network"
+      },
+      "generate": "Generate QR Code",
+      "downloadPng": "PNG",
+      "downloadSvg": "SVG",
+      "copySvg": "Copy SVG",
+      "preview": "Preview"
+    },
+    "gitignoreGenerator": {
+      "name": ".gitignore Generator",
+      "description": "Generate .gitignore files for any project",
+      "search": "Search templates...",
+      "selected": "selected",
+      "templates": "templates",
+      "generate": "Generate .gitignore",
+      "copy": "Copy",
+      "download": "Download .gitignore",
+      "output": "Generated .gitignore",
+      "categories": {
+        "languages": "🖥️ Languages",
+        "frameworks": "🚀 Frameworks",
+        "build": "🔧 Build Tools",
+        "devops": "🐳 DevOps / Infra",
+        "cloud": "☁️ Cloud",
+        "ide": "💻 IDEs",
+        "systems": "🪟 Operating Systems",
+        "other": "🔧 Other"
+      }
+    },
+    "rsaKeyPairGenerator": {
+      "name": "RSA Key Pair Generator",
+      "description": "Generate RSA public and private keys",
+      "keySize": "Key Size",
+      "2048bits": "2048 bits",
+      "4096bits": "4096 bits",
+      "generate": "Generate RSA Key Pair",
+      "publicKey": "Public Key",
+      "privateKey": "Private Key (KEEP SECRET!)",
+      "warning": "⚠️ SECURITY WARNING",
+      "warningText": "Keep private key secret at all times. Never share it with anyone. The private key should be stored securely and never committed to version control.",
+      "copy": "Copy",
+      "download": "Download",
+      "generated": "Generated",
+      "bits": "bits"
+    },
+    "bcryptTester": {
+      "name": "Bcrypt Tester",
+      "description": "Hash and verify passwords with Bcrypt",
+      "tabs": {
+        "hash": "Generate Hash",
+        "verify": "Verify Hash"
+      },
+      "hashTab": {
+        "password": "Password",
+        "passwordPlaceholder": "Enter password to hash...",
+        "cost": "Cost Factor",
+        "costInfo": "Higher = more secure but slower",
+        "generate": "Generate Bcrypt Hash",
+        "output": "Bcrypt Hash",
+        "copy": "Copy",
+        "info": "Info",
+        "infoText": "Bcrypt is ideal for storing passwords securely. The default cost of 10 provides a good balance between security and performance."
+      },
+      "verifyTab": {
+        "password": "Password",
+        "passwordPlaceholder": "Enter password to verify...",
+        "hash": "Bcrypt Hash",
+        "hashPlaceholder": "Paste Bcrypt hash to verify...",
+        "verify": "Verify Password",
+        "info": "Info",
+        "infoText": "Bcrypt is designed to be slow and computationally expensive, making it resistant to brute-force attacks."
+      },
+      "valid": "Valid Password",
+      "invalid": "Invalid Password",
+      "validText": "The password matches hash",
+      "invalidText": "The password does not match hash"
+    },
+    "gitBranchNameGenerator": {
+      "name": "Git Branch Name Generator",
+      "description": "Convert task titles to branch names",
+      "title": "Task Title",
+      "titlePlaceholder": "Fix login bug in production",
+      "branchName": "Branch Name",
+      "maxChars": "/70 chars",
+      "copy": "Copy",
+      "longBranchWarning": "⚠️ Long branch name (max 70 chars recommended)",
+      "rules": "Conversion Rules",
+      "examples": "Examples",
+      "input": "Input",
+      "output": "Output"
     }
   },
   "common": {

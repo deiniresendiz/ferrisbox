@@ -374,6 +374,165 @@
       "key": "clave",
       "value": "valor",
       "rebuiltUrl": "URL Reconstruida"
+    },
+    "loremIpsumGenerator": {
+      "name": "Generador Lorem Ipsum",
+      "description": "Generar texto de relleno para diseños",
+      "type": "Tipo",
+      "paragraphs": "Párrafos",
+      "words": "Palabras",
+      "count": "Cantidad",
+      "generate": "Generar",
+      "copy": "Copiar",
+      "wordCount": "Conteo de Palabras",
+      "paragraphCount": "Conteo de Párrafos",
+      "placeholders": {
+        "text": "El texto de relleno aparecerá aquí..."
+      }
+    },
+    "securePasswordGenerator": {
+      "name": "Generador de Contraseñas Seguras",
+      "description": "Generar contraseñas fuertes con entropía",
+      "length": "Longitud",
+      "uppercase": "Mayúsculas (A-Z)",
+      "lowercase": "Minúsculas (a-z)",
+      "numbers": "Números (0-9)",
+      "symbols": "Símbolos (!@#$%...)",
+      "generate": "Generar Contraseña",
+      "regenerate": "Regenerar",
+      "copy": "Copiar Contraseña",
+      "entropy": "Entropía",
+      "bits": "bits",
+      "strength": "Fortaleza",
+      "strengthLevels": {
+        "weak": "Débil",
+        "moderate": "Moderada",
+        "strong": "Fuerte",
+        "veryStrong": "Muy Fuerte"
+      },
+      "history": "Contraseñas Recientes",
+      "show": "Mostrar",
+      "hide": "Ocultar"
+    },
+    "hmacGenerator": {
+      "name": "Generador HMAC",
+      "description": "Generar firmas HMAC para pruebas de API",
+      "message": "Mensaje",
+      "secret": "Clave Secreta",
+      "algorithm": "Algoritmo",
+      "generate": "Generar HMAC",
+      "output": "Salida HMAC",
+      "copy": "Copiar",
+      "usage": "Uso",
+      "usageText": "Usar HMAC para verificar la integridad de datos y autenticar peticiones API. Común en firmas JWT y autenticación de API."
+    },
+    "qrCodeGenerator": {
+      "name": "Generador de Códigos QR",
+      "description": "Generar códigos QR para URLs y redes WiFi",
+      "urlText": "Texto o URL",
+      "placeholder": "https://example.com o cualquier texto...",
+      "wifi": {
+        "title": "Red WiFi",
+        "ssid": "SSID (Nombre de Red)",
+        "password": "Contraseña (Opcional para redes abiertas)",
+        "passwordPlaceholder": "•••••••••",
+        "encryption": "Tipo de Encriptación",
+        "encryptionTypes": {
+          "wep": "WEP",
+          "wpa": "WPA/WPA2",
+          "nopass": "Sin Contraseña"
+        },
+        "info": "Código QR WiFi",
+        "infoText": "Escanea este código QR con tu teléfono para conectarte automáticamente a la red"
+      },
+      "generate": "Generar Código QR",
+      "downloadPng": "PNG",
+      "downloadSvg": "SVG",
+      "copySvg": "Copiar SVG",
+      "preview": "Vista Previa"
+    },
+    "gitignoreGenerator": {
+      "name": "Generador .gitignore",
+      "description": "Generar archivos .gitignore para cualquier proyecto",
+      "search": "Buscar plantillas...",
+      "selected": "seleccionados",
+      "templates": "plantillas",
+      "generate": "Generar .gitignore",
+      "copy": "Copiar",
+      "download": "Descargar .gitignore",
+      "output": ".gitignore Generado",
+      "categories": {
+        "languages": "🖥️ Lenguajes",
+        "frameworks": "🚀 Frameworks",
+        "build": "🔧 Herramientas de Construcción",
+        "devops": "🐳 DevOps / Infraestructura",
+        "cloud": "☁️ Nube",
+        "ide": "💻 IDEs",
+        "systems": "🪟 Sistemas Operativos",
+        "other": "🔧 Otros"
+      }
+    },
+    "rsaKeyPairGenerator": {
+      "name": "Generador de Par de Claves RSA",
+      "description": "Generar claves públicas y privadas RSA",
+      "keySize": "Tamaño de Clave",
+      "2048bits": "2048 bits",
+      "4096bits": "4096 bits",
+      "generate": "Generar Par de Claves RSA",
+      "publicKey": "Clave Pública",
+      "privateKey": "Clave Privada (¡MANTENER SECRETA!)",
+      "warning": "⚠️ ADVERTENCIA DE SEGURIDAD",
+      "warningText": "Mantener la clave privada secreta en todo momento. Nunca compartirla con nadie. La clave privada debe almacenarse de forma segura y nunca comprometerse al control de versiones.",
+      "copy": "Copiar",
+      "download": "Descargar",
+      "generated": "Generado",
+      "bits": "bits"
+    },
+    "bcryptTester": {
+      "name": "Probador Bcrypt",
+      "description": "Hashear y verificar contraseñas con Bcrypt",
+      "tabs": {
+        "hash": "Generar Hash",
+        "verify": "Verificar Hash"
+      },
+      "hashTab": {
+        "password": "Contraseña",
+        "passwordPlaceholder": "Ingresa contraseña para hashear...",
+        "cost": "Factor de Costo",
+        "costInfo": "Mayor = más seguro pero más lento",
+        "generate": "Generar Hash Bcrypt",
+        "output": "Hash Bcrypt",
+        "copy": "Copiar",
+        "info": "Información",
+        "infoText": "Bcrypt es ideal para almacenar contraseñas de forma segura. El costo por defecto de 10 proporciona un buen equilibrio entre seguridad y rendimiento."
+      },
+      "verifyTab": {
+        "password": "Contraseña",
+        "passwordPlaceholder": "Ingresa contraseña para verificar...",
+        "hash": "Hash Bcrypt",
+        "hashPlaceholder": "Pega hash Bcrypt para verificar...",
+        "verify": "Verificar Contraseña",
+        "info": "Información",
+        "infoText": "Bcrypt está diseñado para ser lento y computacionalmente costoso, haciéndolo resistente a ataques de fuerza bruta."
+      },
+      "valid": "Contraseña Válida",
+      "invalid": "Contraseña Inválida",
+      "validText": "La contraseña coincide con el hash",
+      "invalidText": "La contraseña no coincide con el hash"
+    },
+    "gitBranchNameGenerator": {
+      "name": "Generador de Nombres de Rama Git",
+      "description": "Convertir títulos de tareas en nombres de rama",
+      "title": "Título de Tarea",
+      "titlePlaceholder": "Fix login bug in production",
+      "branchName": "Nombre de Rama",
+      "maxChars": "/70 caracteres",
+      "copy": "Copiar",
+      "longBranchWarning": "⚠️ Nombre de rama largo (máx 70 caracteres recomendado)",
+      "rules": "Reglas de Conversión",
+      "examples": "Ejemplos",
+      "input": "Entrada",
+      "output": "Salida"
     }
   },
   "common": {

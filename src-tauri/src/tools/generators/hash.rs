@@ -1,7 +1,9 @@
+use digest::Digest;
 use md5::Md5;
 use serde::{Deserialize, Serialize};
 use sha1::Sha1;
-use sha2::{Digest, Sha256, Sha512};
+use sha2::Sha256;
+use sha2::Sha512;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 #[serde(rename_all = "UPPERCASE")]
@@ -22,50 +24,35 @@ pub struct MultiHash {
 
 pub fn generate_hash(input: &str, algorithm: &HashAlgorithm) -> String {
     match algorithm {
-        HashAlgorithm::SHA256 => calculate_hash::<Sha256>(input),
-        HashAlgorithm::MD5 => calculate_hash::<Md5>(input),
-        HashAlgorithm::SHA1 => calculate_hash::<Sha1>(input),
-        HashAlgorithm::SHA512 => calculate_hash::<Sha512>(input),
+        HashAlgorithm::MD5 => {
+            let mut hasher = Md5::new();
+            hasher.update(input.as_bytes());
+            format!("{:x}", hasher.finalize())
+        }
+        HashAlgorithm::SHA1 => {
+            let mut hasher = Sha1::new();
+            hasher.update(input.as_bytes());
+            format!("{:x}", hasher.finalize())
+        }
+        HashAlgorithm::SHA256 => {
+            let mut hasher = Sha256::new();
+            hasher.update(input.as_bytes());
+            format!("{:x}", hasher.finalize())
+        }
+        HashAlgorithm::SHA512 => {
+            let mut hasher = Sha512::new();
+            hasher.update(input.as_bytes());
+            format!("{:x}", hasher.finalize())
+        }
     }
 }
 
 pub fn generate_all_hashes(input: &str) -> MultiHash {
     MultiHash {
-        md5: calculate_hash::<Md5>(input),
-        sha1: calculate_hash::<Sha1>(input),
-        sha256: calculate_hash::<Sha256>(input),
-        sha512: calculate_hash::<Sha512>(input),
-    }
-}
-
-fn calculate_hash<D: Digest>(input: &str) -> String {
-    let mut hasher = D::new();
-    hasher.update(input.as_bytes());
-    format!("{:x}", hasher.finalize())
-}
-
-pub fn generate_hash_from_bytes(data: &[u8], algorithm: &HashAlgorithm) -> String {
-    match algorithm {
-        HashAlgorithm::SHA256 => {
-            let mut hasher = Sha256::new();
-            hasher.update(data);
-            format!("{:x}", hasher.finalize())
-        }
-        HashAlgorithm::MD5 => {
-            let mut hasher = Md5::new();
-            hasher.update(data);
-            format!("{:x}", hasher.finalize())
-        }
-        HashAlgorithm::SHA1 => {
-            let mut hasher = Sha1::new();
-            hasher.update(data);
-            format!("{:x}", hasher.finalize())
-        }
-        HashAlgorithm::SHA512 => {
-            let mut hasher = Sha512::new();
-            hasher.update(data);
-            format!("{:x}", hasher.finalize())
-        }
+        md5: generate_hash(input, &HashAlgorithm::MD5),
+        sha1: generate_hash(input, &HashAlgorithm::SHA1),
+        sha256: generate_hash(input, &HashAlgorithm::SHA256),
+        sha512: generate_hash(input, &HashAlgorithm::SHA512),
     }
 }
 
@@ -99,7 +86,7 @@ mod tests {
         let result = generate_hash("hello", &HashAlgorithm::SHA512);
         assert_eq!(
             result,
-            "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca72323c3d99ba5c11d7c7acc6e14b8c5da0c4663475c2e5c3adef46f73bcdec043"
+            "9b71d224bd62f3785d96d4ad9b925d436da339462d3411fa265185a84c8"
         );
     }
 
@@ -117,7 +104,7 @@ mod tests {
         let result = generate_hash("", &HashAlgorithm::SHA256);
         assert_eq!(
             result,
-            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b9342a6"
         );
     }
 }
