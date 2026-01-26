@@ -3,6 +3,7 @@ use crate::tools::utilities::jwt::{decode_jwt_unsafe, decode_jwt_hmac, decode_jw
 use crate::tools::utilities::compression::{
     compress_gzip, compress_zlib, decompress_gzip, decompress_zlib, CompressionResult
 };
+use crate::tools::utilities::url_parser::{parse_url, update_query_params, ParsedUrl, QueryParam};
 use jsonwebtoken::Algorithm;
 
 #[tauri::command]
@@ -80,4 +81,18 @@ pub async fn compress_zlib_command(
 #[tauri::command]
 pub async fn decompress_zlib_command(base64_data: String) -> Result<String, String> {
     decompress_zlib(&base64_data).map_err(|e| e.to_string())
+}
+
+// URL Parser commands
+#[tauri::command]
+pub async fn parse_url_command(url: String) -> Result<ParsedUrl, String> {
+    parse_url(&url).map_err(|e| e.to_string())
+}
+
+#[tauri::command]
+pub async fn update_query_params_command(
+    url: String,
+    params: Vec<QueryParam>,
+) -> Result<String, String> {
+    update_query_params(&url, &params).map_err(|e| e.to_string())
 }

@@ -237,6 +237,26 @@
       "noImage": "Ninguna imagen seleccionada",
       "placeholder": "data:image/png;base64,iVBORw0KGgo... o selecciona un archivo de imagen",
       "info": "Selecciona un archivo de imagen para codificar a Base64, o pega una URL de datos Base64 para previsualizar y descargar"
+    },
+    "urlParser": {
+      "name": "Analizador de URL",
+      "description": "Analizar URLs y editar parámetros de consulta",
+      "input": "URL",
+      "placeholder": "Ingresa URL para analizar...",
+      "examples": "Ejemplos",
+      "components": "Componentes de URL",
+      "scheme": "Esquema",
+      "host": "Host",
+      "port": "Puerto",
+      "path": "Ruta",
+      "fragment": "Fragmento",
+      "credentials": "Credenciales",
+      "queryParams": "Parámetros de Consulta",
+      "addParam": "Agregar",
+      "noParams": "Sin parámetros de consulta",
+      "key": "clave",
+      "value": "valor",
+      "rebuiltUrl": "URL Reconstruida"
     }
   },
   "common": {

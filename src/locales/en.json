@@ -237,6 +237,26 @@
       "noImage": "No image selected",
       "placeholder": "data:image/png;base64,iVBORw0KGgo... or select an image file",
       "info": "Select an image file to encode to Base64, or paste a Base64 data URL to preview and download"
+    },
+    "urlParser": {
+      "name": "URL Parser",
+      "description": "Parse URLs and edit query parameters",
+      "input": "URL",
+      "placeholder": "Enter URL to parse...",
+      "examples": "Examples",
+      "components": "URL Components",
+      "scheme": "Scheme",
+      "host": "Host",
+      "port": "Port",
+      "path": "Path",
+      "fragment": "Fragment",
+      "credentials": "Credentials",
+      "queryParams": "Query Parameters",
+      "addParam": "Add",
+      "noParams": "No query parameters",
+      "key": "key",
+      "value": "value",
+      "rebuiltUrl": "Rebuilt URL"
     }
   },
   "common": {

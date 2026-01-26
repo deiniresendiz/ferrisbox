@@ -11,6 +11,7 @@ import {
   Globe,
   Radio,
   Image,
+  SplitSquareHorizontal,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -29,6 +30,7 @@ import { GzipCompressor } from '../components/tools/GzipCompressor';
 import { PunycodeEncoder } from '../components/tools/PunycodeEncoder';
 import { MorseCode } from '../components/tools/MorseCode';
 import { Base64Image } from '../components/tools/Base64Image';
+import { UrlParser } from '../components/tools/UrlParser';
 
 export const TOOLS: Tool[] = [
   {
@@ -156,6 +158,15 @@ export const TOOLS: Tool[] = [
     keywords: ['base64', 'image', 'data url', 'png', 'jpg', 'encode', 'decode', 'convert'],
     component: Base64Image,
     icon: Image as LucideIcon,
+  },
+  {
+    id: 'url-parser',
+    name: 'URL Parser',
+    category: 'utility',
+    description: 'Parse URLs and edit query parameters',
+    keywords: ['url', 'parse', 'query', 'parameters', 'params', 'uri', 'decode', 'analyze'],
+    component: UrlParser,
+    icon: SplitSquareHorizontal as LucideIcon,
   },
 ];
 

@@ -37,6 +37,9 @@ html-escape = "0.2"
 jsonwebtoken = "9"
 flate2 = "1.0"
 idna = "0.5"
+# GRUPO 4: URL Parser
+url = "2.5"
+urlencoding = "2.1"
 
 [dev-dependencies]
 criterion = "0.5"

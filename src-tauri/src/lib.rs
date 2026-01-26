@@ -52,6 +52,8 @@ pub fn run() {
             utilities::decompress_gzip_command,
             utilities::compress_zlib_command,
             utilities::decompress_zlib_command,
+            utilities::parse_url_command,
+            utilities::update_query_params_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])
