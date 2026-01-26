@@ -40,6 +40,27 @@ idna = "0.5"
 # GRUPO 4: URL Parser
 url = "2.5"
 urlencoding = "2.1"
+# FORMATTERS: XML, SQL, CSS, YAML, etc.
+quick-xml = "0.36"
+sqlformat = "0.2"
+serde_yaml = "0.9"
+lightningcss = { version = "1.0.0-alpha.57", features = ["visitor"] }
+tempfile = "3.10"
+# GENERATORS: Password, HMAC, QR Code, etc.
+rand = "0.8"
+qrcode = "0.14"
+sha1 = "0.10"
+hmac = "0.12"
+bcrypt = "0.16"
+rsa = "0.9"
+# Add v1 support for UUID
+uuid = { version = "1.11", features = ["v1", "v4", "v7", "serde"] }
+# For RSA
+base64ct = "1.6"
+digest = "0.10"
+pkcs8 = "0.10"
+# For QR Code PNG generation
+image = "0.25"
 
 [dev-dependencies]
 criterion = "0.5"

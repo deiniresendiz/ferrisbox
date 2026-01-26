@@ -4,7 +4,7 @@ import { Copy, Check, Star, RefreshCw } from 'lucide-react';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import clsx from 'clsx';
 
-type UuidVersion = 'v4' | 'v7';
+type UuidVersion = 'v1' | 'v4' | 'v7';
 
 export const UuidGenerator: React.FC = () => {
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
@@ -48,6 +48,19 @@ export const UuidGenerator: React.FC = () => {
     }
   };
 
+  const getVersionDescription = () => {
+    switch (version) {
+      case 'v1':
+        return 'Time-based + MAC address. Oldest format, not cryptographically unique.';
+      case 'v4':
+        return 'Random UUID. Most common, cryptographically unique.';
+      case 'v7':
+        return 'Time-based + random. Sortable by creation time, recommended for new projects.';
+      default:
+        return '';
+    }
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-6 flex items-center justify-between">
@@ -56,7 +69,7 @@ export const UuidGenerator: React.FC = () => {
             UUID Generator
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Generate universally unique identifiers (v4 random or v7 timestamp-based)
+            Generate universally unique identifiers (v1, v4, or v7)
           </p>
         </div>
         <button
@@ -82,6 +95,7 @@ export const UuidGenerator: React.FC = () => {
             onChange={(e) => setVersion(e.target.value as UuidVersion)}
             className="w-full px-3 py-2 bg-white dark:bg-space-700 border border-gray-300 dark:border-space-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-rust-500"
           >
+            <option value="v1">v1 (Time-based + MAC)</option>
             <option value="v4">v4 (Random)</option>
             <option value="v7">v7 (Timestamp-based)</option>
           </select>
@@ -114,11 +128,27 @@ export const UuidGenerator: React.FC = () => {
         )}
       </div>
 
+      {version === 'v1' && (
+        <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+          <p className="text-sm text-yellow-800 dark:text-yellow-200">
+            <strong>⚠️ UUID v1:</strong> Contains MAC address which can be used to identify the
+            generating machine. Not recommended for privacy-sensitive applications.
+          </p>
+        </div>
+      )}
+
       {version === 'v7' && (
         <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
           <p className="text-sm text-blue-800 dark:text-blue-200">
-            <strong>UUID v7:</strong> Includes timestamp information, making them sortable by
-            creation time. Great for database primary keys.
+            <strong>UUID v7:</strong> {getVersionDescription()}
+          </p>
+        </div>
+      )}
+
+      {version === 'v4' && (
+        <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+          <p className="text-sm text-green-800 dark:text-green-200">
+            <strong>UUID v4:</strong> {getVersionDescription()}
           </p>
         </div>
       )}

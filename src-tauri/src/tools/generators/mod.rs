@@ -1,2 +1,21 @@
 pub mod hash;
 pub mod uuid;
+pub mod lorem;
+pub mod password;
+pub mod hmac;
+pub mod qrcode;
+pub mod gitignore;
+pub mod rsa;
+pub mod bcrypt;
+pub mod git_branch;
+
+pub use hash::{HashAlgorithm, MultiHash, generate_hash, generate_all_hashes};
+pub use uuid::{UuidVersion, generate_uuid, generate_multiple_uuids, validate_uuid};
+pub use lorem::{LoremType, LoremOutput, generate_lorem};
+pub use password::{PasswordOptions, PasswordOutput, generate_password};
+pub use hmac::{HmacAlgorithm, generate_hmac};
+pub use qrcode::{QrType, QrOutput, WifiCredentials, generate_qr_code, generate_wifi_qr};
+pub use gitignore::{GitignoreTemplate, generate_gitignore};
+pub use rsa::{RsaKeySize, RsaKeyPair, generate_rsa_key_pair};
+pub use bcrypt::{BcryptHashOutput, bcrypt_hash, bcrypt_verify};
+pub use git_branch::{BranchNameOutput, generate_git_branch_name};

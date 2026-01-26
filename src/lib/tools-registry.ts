@@ -12,6 +12,12 @@ import {
   Radio,
   Image,
   SplitSquareHorizontal,
+  FileCode,
+  Database,
+  FileType,
+  FileJson2,
+  FileCode2,
+  Wrench,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -31,6 +37,12 @@ import { PunycodeEncoder } from '../components/tools/PunycodeEncoder';
 import { MorseCode } from '../components/tools/MorseCode';
 import { Base64Image } from '../components/tools/Base64Image';
 import { UrlParser } from '../components/tools/UrlParser';
+import { XmlFormatter } from '../components/tools/XmlFormatter';
+import { SqlFormatter } from '../components/tools/SqlFormatter';
+import { CssFormatter } from '../components/tools/CssFormatter';
+import { JsFormatter } from '../components/tools/JsFormatter';
+import { YamlFormatter } from '../components/tools/YamlFormatter';
+import { RustFormatter } from '../components/tools/RustFormatter';
 
 export const TOOLS: Tool[] = [
   {
@@ -41,6 +53,60 @@ export const TOOLS: Tool[] = [
     keywords: ['json', 'format', 'validate', 'prettify', 'minify'],
     component: JsonFormatter,
     icon: FileJson as LucideIcon,
+  },
+  {
+    id: 'xml-formatter',
+    name: 'XML Formatter',
+    category: 'formatter',
+    description: 'Format, validate and beautify XML',
+    keywords: ['xml', 'format', 'validate', 'prettify', 'minify'],
+    component: XmlFormatter,
+    icon: FileCode as LucideIcon,
+  },
+  {
+    id: 'sql-formatter',
+    name: 'SQL Formatter',
+    category: 'formatter',
+    description: 'Format SQL with multiple dialect support',
+    keywords: ['sql', 'format', 'postgresql', 'mysql', 'sqlite', 'query'],
+    component: SqlFormatter,
+    icon: Database as LucideIcon,
+  },
+  {
+    id: 'css-formatter',
+    name: 'CSS Formatter',
+    category: 'formatter',
+    description: 'Format, validate and beautify CSS/SCSS',
+    keywords: ['css', 'scss', 'format', 'validate', 'prettify', 'minify', 'style'],
+    component: CssFormatter,
+    icon: FileType as LucideIcon,
+  },
+  {
+    id: 'js-formatter',
+    name: 'JavaScript Formatter',
+    category: 'formatter',
+    description: 'Format, validate and beautify JavaScript/TypeScript',
+    keywords: ['javascript', 'typescript', 'format', 'validate', 'prettify', 'minify', 'js', 'ts'],
+    component: JsFormatter,
+    icon: FileJson2 as LucideIcon,
+  },
+  {
+    id: 'yaml-formatter',
+    name: 'YAML Formatter',
+    category: 'formatter',
+    description: 'Format, validate and beautify YAML',
+    keywords: ['yaml', 'yml', 'format', 'validate', 'prettify', 'minify', 'config'],
+    component: YamlFormatter,
+    icon: FileCode2 as LucideIcon,
+  },
+  {
+    id: 'rust-formatter',
+    name: 'Rust Formatter',
+    category: 'formatter',
+    description: 'Format and validate Rust code using rustfmt',
+    keywords: ['rust', 'format', 'validate', 'rustfmt', 'rs'],
+    component: RustFormatter,
+    icon: Wrench as LucideIcon,
   },
   {
     id: 'hash-generator',
