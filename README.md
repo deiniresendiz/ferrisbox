@@ -15,7 +15,7 @@ FerrisBox is a powerful desktop application that provides essential developer to
 
 - ⚡ **Blazing Fast** - Built with Rust for maximum performance
 - 🔒 **Privacy First** - All processing happens locally, no data leaves your machine
-- 🌍 **Multi-language** - Supports English and Spanish
+- 🌍 **Multi-language** - Supports English, Spanish, Portuguese and Chinese
 - 🎨 **Dark/Light Mode** - Beautiful UI with theme switching
 - ⭐ **Favorites** - Mark your most-used tools for quick access
 - 🔍 **Quick Search** - Find tools instantly with Command Palette (Ctrl+K)
@@ -38,15 +38,16 @@ FerrisBox is a powerful desktop application that provides essential developer to
 
 ### Encoders & Decoders 🔐
 
-| Tool                       | Description                           | Features                 |
-| -------------------------- | ------------------------------------- | ------------------------ |
-| **Base64 Encoder/Decoder** | Encode or decode Base64 strings       | Text and binary support  |
-| **URL Encoder/Decoder**    | Encode or decode URL strings          | Percent-encoding support |
-| **Hex Converter**          | Convert between text and hexadecimal  | Binary representation    |
-| **HTML Entities Encoder**  | Encode/decode HTML special characters | XSS prevention           |
-| **Punycode Encoder**       | Encode internationalized domain names | IDN to ASCII conversion  |
-| **Morse Code**             | Encode/decode text to Morse code      | Signal representation    |
-| **Base64 Image Encoder**   | Convert images to Base64 data URLs    | PNG, JPG support         |
+| Tool                       | Description                           | Features                    |
+| -------------------------- | ------------------------------------- | --------------------------- |
+| **Base64 Encoder/Decoder** | Encode or decode Base64 strings       | Text and binary support     |
+| **URL Encoder/Decoder**    | Encode or decode URL strings          | Percent-encoding support    |
+| **Hex Converter**          | Convert between text and hexadecimal  | Binary representation       |
+| **HTML Entities Encoder**  | Encode/decode HTML special characters | XSS prevention              |
+| **Punycode Encoder**       | Encode internationalized domain names | IDN to ASCII conversion     |
+| **Morse Code**             | Encode/decode text to Morse code      | Signal representation       |
+| **Base64 Image Encoder**   | Convert images to Base64 data URLs    | PNG, JPG support            |
+| **String Escaper**         | Escape/unescape code strings          | JS, Java, HTML, URL support |
 
 ### Generators 🎲
 
@@ -61,6 +62,7 @@ FerrisBox is a powerful desktop application that provides essential developer to
 | **RSA Key Pair Generator**    | Generate RSA public and private keys       | PEM format              |
 | **Bcrypt Tester**             | Hash and verify passwords with Bcrypt      | Security testing        |
 | **Git Branch Name Generator** | Convert task titles to branch names        | Kebab-case conversion   |
+| **ASCII Art Generator**       | Generate ASCII banners from text           | Multiple fonts (figlet) |
 
 ### Utilities 🧰
 
@@ -71,6 +73,8 @@ FerrisBox is a powerful desktop application that provides essential developer to
 | **JWT Debugger**    | Decode and validate JWT tokens offline       | Header, payload, signature |
 | **GZip Compressor** | Compress and decompress with GZip/Zlib       | Archive support            |
 | **URL Parser**      | Parse URLs and edit query parameters         | Parameter editing          |
+| **Word Counter**    | Detailed text statistics                     | Words, chars, reading time |
+| **List Sorter**     | Sort and organize text lists                 | Unique, shuffle, length    |
 
 ### Converters 🔄
 
@@ -84,6 +88,16 @@ FerrisBox is a powerful desktop application that provides essential developer to
 | **JSON/YAML Converter**   | Convert between JSON and YAML formats           | Bidirectional conversion     |
 | **Color Picker**          | Convert colors between different formats        | HEX, RGB, HSL, CMYK          |
 | **Text Diff**             | Compare two texts and see differences           | Side-by-side & Unified views |
+| **Case Converter**        | Change text naming conventions                  | camelCase, snake_case, etc.  |
+
+### Network 🌐
+
+| Tool                  | Description                         | Features                    |
+| --------------------- | ----------------------------------- | --------------------------- |
+| **IP Info**           | Get local and public IP information | Real-time detection         |
+| **Port Scanner**      | Scan common ports on localhost      | Fast TCP scanning           |
+| **DNS Lookup**        | Query DNS records for any domain    | A, AAAA, MX, TXT, CNAME, NS |
+| **HTTP Status Codes** | Reference for HTTP response codes   | Full list with descriptions |
 
 ## 🚀 Quick Start
 
@@ -122,7 +136,7 @@ ferrisbox/
 │   ├── contexts/          # React contexts (Theme, Favorites, etc.)
 │   ├── hooks/             # Custom hooks
 │   ├── lib/               # Utilities and helpers
-│   ├── locales/           # Translations (en.json, es.json)
+│   ├── locales/           # Translations (en, es, pt, zh)
 │   └── types/             # TypeScript type definitions
 ├── src-tauri/             # Rust backend
 │   └── src/
@@ -132,7 +146,8 @@ ferrisbox/
 │       │   ├── formatters/ # Formatting tools
 │       │   ├── generators/ # Generation tools
 │       │   ├── utilities/  # Utility tools
-│       │   └── converters/ # Conversion tools
+│       │   ├── converters/ # Conversion tools
+│       │   └── network/    # Network tools
 │       ├── storage/       # Configuration persistence
 │       └── utils/         # Helper functions
 └── public/                # Static assets (logo, icons, etc.)
@@ -169,9 +184,9 @@ The configuration includes:
 
 ### Frontend
 
-- **React 18** - UI framework
+- **React 19** - UI framework
 - **TypeScript** - Type safety
-- **Tailwind CSS** - Styling
+- **Tailwind CSS 4** - Styling
 - **Lucide React** - Icons
 - **react-i18next** - Internationalization
 
@@ -183,7 +198,7 @@ The configuration includes:
 - [x] Hash Generator
 - [x] Base64 Encoder/Decoder
 - [x] Basic UI with dark mode
-- [x] Multi-language support
+- [x] Multi-language support (EN, ES)
 
 ### Phase 2 (✅ Completed)
 
@@ -225,13 +240,25 @@ The configuration includes:
 - [x] JSON/YAML Converter
 - [x] CSV to JSON Converter
 
-### Phase 6 (Future)
+### Phase 6 (✅ Completed)
+
+- [x] IP Information Tool
+- [x] Port Scanner
+- [x] DNS Lookup Utility
+- [x] HTTP Status Codes Reference
+- [x] Word Counter & Text Statistics
+- [x] Case Converter (camel, snake, etc.)
+- [x] String Escaper/Unescaper
+- [x] ASCII Art Generator
+- [x] List Sorter & Organizer
+
+### Phase 7 (Future)
 
 - [ ] Image Compressor
+- [ ] CURL to Code Converter
 - [ ] More encoding formats
 - [ ] Plugin system
 - [ ] Custom tool builder
-- [ ] Cloud sync for settings (optional)
 
 ## 🤝 Contributing
 
@@ -290,9 +317,9 @@ Built with ❤️ using:
 
 ## 📊 Stats
 
-- **Total Tools**: 36
-- **Categories**: 5 (Formatters, Encoders, Generators, Converters, Utilities)
-- **Languages**: 2 (English, Spanish)
+- **Total Tools**: 45
+- **Categories**: 6 (Formatters, Encoders, Generators, Converters, Utilities, Network)
+- **Languages**: 4 (English, Spanish, Portuguese, Chinese)
 - **Themes**: 2 (Light, Dark)
 
 ---
