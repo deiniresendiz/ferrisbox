@@ -34,6 +34,10 @@ import {
   Wifi,
   Search,
   Info,
+  FileImage,
+  Minimize2,
+  Eye,
+  Circle,
   // Terminal,
   type LucideIcon,
 } from 'lucide-react';
@@ -48,6 +52,11 @@ import { UrlEncoder } from '../components/tools/UrlEncoder';
 import { RegexTester } from '../components/tools/RegexTester';
 import { HexConverter } from '../components/tools/HexConverter';
 import { HtmlEntities } from '../components/tools/HtmlEntities';
+import { SvgOptimizer } from '../components/tools/SvgOptimizer';
+import { ImageCompressor } from '../components/tools/ImageCompressor';
+import { FaviconGenerator } from '../components/tools/FaviconGenerator';
+import { Base64ImagePreviewer } from '../components/tools/Base64ImagePreviewer';
+import { ContrastChecker } from '../components/tools/ContrastChecker';
 import { JwtDebugger } from '../components/tools/JwtDebugger';
 import { GzipCompressor } from '../components/tools/GzipCompressor';
 import { PunycodeEncoder } from '../components/tools/PunycodeEncoder';
@@ -511,6 +520,51 @@ export const TOOLS: Tool[] = [
     keywords: ['http', 'status', 'codes', 'error', '404', '500', '200'],
     component: HttpStatusCodes,
     icon: Info as LucideIcon,
+  },
+  {
+    id: 'svg-optimizer',
+    name: 'SVG Optimizer',
+    category: 'graphics',
+    description: 'Clean and reduce SVG file size',
+    keywords: ['svg', 'optimize', 'minify', 'reduce', 'clean', 'compress'],
+    component: SvgOptimizer,
+    icon: FileImage as LucideIcon,
+  },
+  {
+    id: 'image-compressor',
+    name: 'Image Compressor',
+    category: 'graphics',
+    description: 'Reduce PNG/JPEG/WebP file size',
+    keywords: ['image', 'compress', 'png', 'jpeg', 'webp', 'optimize', 'reduce'],
+    component: ImageCompressor,
+    icon: Minimize2 as LucideIcon,
+  },
+  {
+    id: 'favicon-generator',
+    name: 'Favicon Generator',
+    category: 'graphics',
+    description: 'Create favicon sets from images',
+    keywords: ['favicon', 'icon', 'ico', 'png', 'web', 'browser', 'tab'],
+    component: FaviconGenerator,
+    icon: Image as LucideIcon,
+  },
+  {
+    id: 'base64-image-previewer',
+    name: 'Base64 Image Previewer',
+    category: 'graphics',
+    description: 'Preview base64 encoded images',
+    keywords: ['base64', 'image', 'preview', 'decode', 'visualize', 'data-url'],
+    component: Base64ImagePreviewer,
+    icon: Eye as LucideIcon,
+  },
+  {
+    id: 'contrast-checker',
+    name: 'Contrast Checker',
+    category: 'graphics',
+    description: 'Check WCAG accessibility compliance',
+    keywords: ['contrast', 'accessibility', 'wcag', 'color', 'a11y', 'check'],
+    component: ContrastChecker,
+    icon: Circle as LucideIcon,
   },
   /*
   {

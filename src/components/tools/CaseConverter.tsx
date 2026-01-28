@@ -107,15 +107,15 @@ export const CaseConverter: React.FC = () => {
               onChange={(e) => setTargetCase(e.target.value)}
               className="px-3 py-2 border border-gray-300 dark:border-space-600 rounded-md bg-white dark:bg-space-700 text-gray-900 dark:text-gray-100"
             >
-              <option value="camel">camelCase</option>
-              <option value="snake">snake_case</option>
-              <option value="pascal">PascalCase</option>
-              <option value="constant">CONSTANT_CASE</option>
-              <option value="kebab">kebab-case</option>
-              <option value="title">Title Case</option>
-              <option value="train">Train-Case</option>
-              <option value="lower">lowercase</option>
-              <option value="upper">UPPERCASE</option>
+              <option value="camel">{t('tools.caseConverter.camel')}</option>
+              <option value="snake">{t('tools.caseConverter.snake')}</option>
+              <option value="pascal">{t('tools.caseConverter.pascal')}</option>
+              <option value="constant">{t('tools.caseConverter.constant')}</option>
+              <option value="kebab">{t('tools.caseConverter.kebab')}</option>
+              <option value="title">{t('tools.caseConverter.title')}</option>
+              <option value="train">{t('tools.caseConverter.train')}</option>
+              <option value="lower">{t('tools.caseConverter.lower')}</option>
+              <option value="upper">{t('tools.caseConverter.upper')}</option>
             </select>
 
             <button onClick={handleConvert} className="btn btn-primary">

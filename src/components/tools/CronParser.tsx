@@ -19,16 +19,16 @@ export const CronParser: React.FC = () => {
   const favorite = isFavorite(toolId);
 
   const cronExamples = [
-    { name: 'Every minute', expression: '* * * *' },
-    { name: 'Every hour', expression: '0 * * *' },
-    { name: 'Daily at midnight', expression: '0 0 * *' },
-    { name: 'Weekly on Sunday', expression: '0 0 * * 0' },
-    { name: 'Monthly on 1st', expression: '0 0 1 *' },
-    { name: 'Yearly', expression: '@yearly' },
-    { name: '@monthly', expression: '@monthly' },
-    { name: '@weekly', expression: '@weekly' },
-    { name: '@daily', expression: '@daily' },
-    { name: '@hourly', expression: '@hourly' },
+    { name: t('tools.cronParser.examplesList.everyMinute'), expression: '* * * *' },
+    { name: t('tools.cronParser.examplesList.everyHour'), expression: '0 * * *' },
+    { name: t('tools.cronParser.examplesList.dailyMidnight'), expression: '0 0 * *' },
+    { name: t('tools.cronParser.examplesList.weeklySunday'), expression: '0 0 * * 0' },
+    { name: t('tools.cronParser.examplesList.monthlyFirst'), expression: '0 0 1 *' },
+    { name: t('tools.cronParser.examplesList.yearly'), expression: '@yearly' },
+    { name: t('tools.cronParser.examplesList.monthly'), expression: '@monthly' },
+    { name: t('tools.cronParser.examplesList.weekly'), expression: '@weekly' },
+    { name: t('tools.cronParser.examplesList.daily'), expression: '@daily' },
+    { name: t('tools.cronParser.examplesList.hourly'), expression: '@hourly' },
   ];
 
   const handleParse = async () => {
@@ -144,18 +144,20 @@ export const CronParser: React.FC = () => {
                 onChange={(e) => setTimezone(e.target.value)}
                 className="px-3 py-2 border border-gray-300 dark:border-space-600 rounded-md bg-white dark:bg-space-700 text-gray-900 dark:text-gray-100"
               >
-                <option value="UTC">UTC (Coordinated Universal Time)</option>
-                <option value="Local">Local (System Time)</option>
-                <option value="America/New_York">New York (EST/EDT)</option>
-                <option value="America/Los_Angeles">Los Angeles (PST/PDT)</option>
-                <option value="America/Chicago">Chicago (CST/CDT)</option>
-                <option value="America/Denver">Denver (MST/MDT)</option>
-                <option value="Europe/London">London (GMT/BST)</option>
-                <option value="Europe/Paris">Paris (CET/CEST)</option>
-                <option value="Europe/Berlin">Berlin (CET/CEST)</option>
-                <option value="Asia/Tokyo">Tokyo (JST)</option>
-                <option value="Asia/Shanghai">Shanghai (CST)</option>
-                <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
+                <option value="UTC">{t('tools.cronParser.timezones.utc')}</option>
+                <option value="Local">{t('tools.cronParser.timezones.local')}</option>
+                <option value="America/New_York">{t('tools.cronParser.timezones.newYork')}</option>
+                <option value="America/Los_Angeles">
+                  {t('tools.cronParser.timezones.losAngeles')}
+                </option>
+                <option value="America/Chicago">{t('tools.cronParser.timezones.chicago')}</option>
+                <option value="America/Denver">{t('tools.cronParser.timezones.denver')}</option>
+                <option value="Europe/London">{t('tools.cronParser.timezones.london')}</option>
+                <option value="Europe/Paris">{t('tools.cronParser.timezones.paris')}</option>
+                <option value="Europe/Berlin">{t('tools.cronParser.timezones.berlin')}</option>
+                <option value="Asia/Tokyo">{t('tools.cronParser.timezones.tokyo')}</option>
+                <option value="Asia/Shanghai">{t('tools.cronParser.timezones.shanghai')}</option>
+                <option value="Australia/Sydney">{t('tools.cronParser.timezones.sydney')}</option>
               </select>
             </div>
 

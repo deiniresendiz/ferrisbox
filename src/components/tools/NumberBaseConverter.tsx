@@ -77,25 +77,25 @@ export const NumberBaseConverter: React.FC = () => {
         onClick={() => loadExample('0')}
         className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
       >
-        {t('tools.numberBaseConverter.examples.zero')}
+        {t('tools.numberBaseConverter.examplesList.zero')}
       </button>
       <button
         onClick={() => loadExample('255')}
         className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
       >
-        {t('tools.numberBaseConverter.examples.twoHundred')}
+        {t('tools.numberBaseConverter.examplesList.twoHundred')}
       </button>
       <button
         onClick={() => loadExample('1024')}
         className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
       >
-        {t('tools.numberBaseConverter.examples.oneThousand')}
+        {t('tools.numberBaseConverter.examplesList.oneThousand')}
       </button>
       <button
         onClick={() => loadExample('0xFF')}
         className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
       >
-        {t('tools.numberBaseConverter.examples.hex')}
+        {t('tools.numberBaseConverter.examplesList.hex')}
       </button>
     </>
   );

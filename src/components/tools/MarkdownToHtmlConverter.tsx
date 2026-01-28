@@ -186,19 +186,19 @@ Task 3: [ ] Task description`,
               onClick={() => loadExample('simple')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.markdownToHtmlConverter.examples.simple')}
+              {t('tools.markdownToHtmlConverter.examplesList.simple')}
             </button>
             <button
               onClick={() => loadExample('table')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.markdownToHtmlConverter.examples.table')}
+              {t('tools.markdownToHtmlConverter.examplesList.table')}
             </button>
             <button
               onClick={() => loadExample('tasklist')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.markdownToHtmlConverter.examples.tasklist')}
+              {t('tools.markdownToHtmlConverter.examplesList.tasklist')}
             </button>
           </div>
         </div>

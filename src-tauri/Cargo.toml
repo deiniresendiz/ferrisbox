@@ -72,6 +72,11 @@ convert_case = "0.6"
 local-ip-address = "0.6"
 hickory-resolver = "0.24"
 
+# GRAPHICS: Graphics tools
+ico = "0.3"
+webp = "0.2"
+zip = "0.6"
+
 [dev-dependencies]
 criterion = "0.5"
 tempfile = "3.10"

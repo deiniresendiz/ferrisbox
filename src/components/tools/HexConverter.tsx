@@ -59,14 +59,14 @@ export const HexConverter: React.FC = () => {
   const examples =
     mode === 'textToHex'
       ? [
-          { label: 'Hello', value: 'Hello' },
-          { label: 'Hello World', value: 'Hello World' },
-          { label: 'Unicode: 你好', value: '你好' },
+          { label: t('tools.hexConverter.examplesList.hello'), value: 'Hello' },
+          { label: t('tools.hexConverter.examplesList.helloWorld'), value: 'Hello World' },
+          { label: t('tools.hexConverter.examplesList.unicode'), value: '你好' },
         ]
       : [
-          { label: '48656c6c6f', value: '48656c6c6f' },
-          { label: 'With spaces', value: '48 65 6c 6c 6f' },
-          { label: 'With 0x prefix', value: '0x48656c6c6f' },
+          { label: t('tools.hexConverter.examplesList.hex'), value: '48656c6c6f' },
+          { label: t('tools.hexConverter.examplesList.withSpaces'), value: '48 65 6c 6c 6f' },
+          { label: t('tools.hexConverter.examplesList.withPrefix'), value: '0x48656c6c6f' },
         ];
 
   return (

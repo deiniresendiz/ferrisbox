@@ -64,14 +64,20 @@ export const HtmlEntities: React.FC = () => {
   const examples =
     mode === 'encode'
       ? [
-          { label: '<div>Hello</div>', value: '<div>Hello</div>' },
-          { label: 'A & B', value: 'A & B' },
-          { label: '<script>alert("XSS")</script>', value: '<script>alert("XSS")</script>' },
+          { label: t('tools.htmlEntities.examplesList.hello'), value: '<div>Hello</div>' },
+          { label: t('tools.htmlEntities.examplesList.amp'), value: 'A & B' },
+          {
+            label: t('tools.htmlEntities.examplesList.xss'),
+            value: '<script>alert("XSS")</script>',
+          },
         ]
       : [
-          { label: '&lt;div&gt;', value: '&lt;div&gt;Hello&lt;/div&gt;' },
-          { label: '&amp;', value: 'A &amp; B' },
-          { label: '&#60;', value: '&#60;div&#62;' },
+          {
+            label: t('tools.htmlEntities.examplesList.encodedDiv'),
+            value: '&lt;div&gt;Hello&lt;/div&gt;',
+          },
+          { label: t('tools.htmlEntities.examplesList.encodedAmp'), value: 'A &amp; B' },
+          { label: t('tools.htmlEntities.examplesList.encodedLt'), value: '&#60;div&#62;' },
         ];
 
   return (

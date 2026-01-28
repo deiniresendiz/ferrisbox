@@ -22,7 +22,8 @@ export type ToolCategory =
   | 'generator'
   | 'converter'
   | 'utility'
-  | 'network';
+  | 'network'
+  | 'graphics';
 
 export interface Tool {
   id: string;

@@ -3,7 +3,7 @@ mod storage;
 mod tools;
 mod utils;
 
-use commands::{clipboard, converters, diff, encoders, formatters, generators, network, storage as storage_commands, utilities};
+use commands::{clipboard, converters, diff, encoders, formatters, generators, graphics, network, storage as storage_commands, utilities};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -102,6 +102,13 @@ pub fn run() {
             converters::convert_frequency_units_command,
             converters::parse_cron_command,
             converters::convert_case_command,
+            // Graphics commands
+            graphics::optimize_svg_command,
+            graphics::compress_image_command,
+            graphics::generate_favicon_ico_command,
+            graphics::generate_favicon_pngs_command,
+            graphics::validate_base64_image_command,
+            graphics::check_contrast_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])

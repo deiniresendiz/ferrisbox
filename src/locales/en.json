@@ -13,7 +13,8 @@
       "generators": "Generators",
       "converters": "Converters",
       "utilities": "Utilities",
-      "networks": "Network"
+      "networks": "Networks",
+      "graphics": "Graphics"
     }
   },
   "tools": {
@@ -221,6 +222,14 @@
       "examples": "Examples",
       "errors": {
         "invalidHex": "Invalid hexadecimal characters"
+      },
+      "examplesList": {
+        "hello": "Hello",
+        "helloWorld": "Hello World",
+        "unicode": "Unicode: 你好",
+        "hex": "48656c6c6f",
+        "withSpaces": "With spaces",
+        "withPrefix": "With 0x prefix"
       }
     },
     "htmlEntities": {
@@ -241,7 +250,15 @@
         "text": "Enter text to encode...",
         "encoded": "Enter HTML entities to decode..."
       },
-      "examples": "Examples"
+      "examples": "Examples",
+      "examplesList": {
+        "hello": "<div>Hello</div>",
+        "amp": "A & B",
+        "xss": "XSS script",
+        "encodedDiv": "&lt;div&gt;",
+        "encodedAmp": "&amp;",
+        "encodedLt": "&#60;"
+      }
     },
     "jwtDebugger": {
       "name": "JWT Debugger",
@@ -354,7 +371,15 @@
       "dataUrl": "Data URL (Base64)",
       "noImage": "No image selected",
       "placeholder": "data:image/png;base64,iVBORw0KGgo... or select an image file",
-      "info": "Select an image file to encode to Base64, or paste a Base64 data URL to preview and download"
+      "info": "Select an image file to encode to Base64, or paste a Base64 data URL to preview and download",
+      "fileInfoDataUrl": "Data URL ({{size}} KB)",
+      "fileInfoDownloaded": "Downloaded as image.{{extension}}",
+      "errors": {
+        "invalidDataUrl": "Invalid data URL format. Must start with \"data:image/\"",
+        "noImageData": "No image data to download",
+        "selectValidImage": "Please select a valid image file",
+        "failedToRead": "Failed to read file"
+      }
     },
     "urlParser": {
       "name": "URL Parser",
@@ -552,7 +577,21 @@
       "exampleRecent": "Recent",
       "placeholder": "Enter Unix timestamp...",
       "outputPlaceholder": "Human-readable date will appear here",
-      "invalidTimestamp": "Invalid timestamp"
+      "invalidTimestamp": "Invalid timestamp",
+      "timezones": {
+        "utc": "UTC (Coordinated Universal Time)",
+        "local": "Local (System Time)",
+        "newYork": "New York (EST/EDT)",
+        "losAngeles": "Los Angeles (PST/PDT)",
+        "chicago": "Chicago (CST/CDT)",
+        "denver": "Denver (MST/MDT)",
+        "london": "London (GMT/BST)",
+        "paris": "Paris (CET/CEST)",
+        "berlin": "Berlin (CET/CEST)",
+        "tokyo": "Tokyo (JST)",
+        "shanghai": "Shanghai (CST)",
+        "sydney": "Sydney (AEST/AEDT)"
+      }
     },
     "unitsConverter": {
       "name": "Units Converter",
@@ -565,7 +604,19 @@
       "data": "Data",
       "time": "Time",
       "frequency": "Frequency",
-      "invalidInput": "Please enter a valid number"
+      "invalidInput": "Please enter a valid number",
+      "binaryNote": "Data units use binary prefixes (KiB, MiB, GiB, etc.)",
+      "decimalNote": "Data units use decimal prefixes (KB, MB, GB, etc.)",
+      "examples": "Examples",
+      "examplesList": {
+        "oneKb": "1 KiB",
+        "oneGb": "1 GiB",
+        "oneTb": "1 TiB",
+        "oneHour": "1 Hour"
+      },
+      "result": "Result",
+      "input": "Input",
+      "outputPlaceholder": "Converted value will appear here"
     },
     "numberBaseConverter": {
       "name": "Number Base Converter",
@@ -579,8 +630,19 @@
       "octal": "Octal",
       "decimal": "Decimal",
       "hexadecimal": "Hexadecimal",
-      "placeholder": "Enter a number...",
-      "invalidNumber": "Invalid number for the specified base"
+      "placeholder": {
+        "binary": "e.g., 101010",
+        "octal": "e.g., 52",
+        "decimal": "e.g., 42",
+        "hexadecimal": "e.g., 2A"
+      },
+      "invalidNumber": "Invalid number for the specified base",
+      "examplesList": {
+        "zero": "Zero",
+        "twoHundred": "255",
+        "oneThousand": "1024",
+        "hex": "0xFF"
+      }
     },
     "markdownToHtml": {
       "name": "Markdown to HTML",
@@ -589,7 +651,21 @@
       "html": "HTML",
       "convert": "Convert",
       "placeholder": "Enter Markdown...",
-      "outputPlaceholder": "HTML will appear here"
+      "outputPlaceholder": "HTML will appear here",
+      "emptyInput": "Please enter some Markdown",
+      "enableTables": "Tables",
+      "enableStrikethrough": "Strikethrough",
+      "enableTasklists": "Tasklists",
+      "examples": "Examples",
+      "examplesList": {
+        "simple": "Simple Text",
+        "table": "Table",
+        "tasklist": "Task List"
+      },
+      "input": "Input",
+      "output": "Output",
+      "copy": "Copy",
+      "copied": "Copied"
     },
     "csvToJson": {
       "name": "CSV to JSON",
@@ -600,7 +676,22 @@
       "delimiter": "Delimiter",
       "hasHeader": "Has Header",
       "placeholder": "Enter CSV...",
-      "outputPlaceholder": "JSON will appear here"
+      "outputPlaceholder": "JSON will appear here",
+      "emptyInput": "Please enter some CSV",
+      "autoDetect": "Auto-detect",
+      "comma": "Comma (,)",
+      "semicolon": "Semicolon (;)",
+      "tab": "Tab",
+      "pipe": "Pipe (|)",
+      "firstRowHeader": "First row is header",
+      "examples": "Examples",
+      "examplesList": {
+        "simple": "Simple CSV",
+        "withHeader": "CSV with Header",
+        "excel": "Excel format"
+      },
+      "input": "Input",
+      "output": "Output"
     },
     "jsonYaml": {
       "name": "JSON/YAML Converter",
@@ -611,7 +702,27 @@
       "toJson": "To JSON",
       "toYaml": "To YAML",
       "placeholder": "Enter JSON or YAML...",
-      "outputPlaceholder": "Converted output will appear here"
+      "outputPlaceholder": "Converted output will appear here",
+      "invalidInput": "Please enter valid input",
+      "twoSpaces": "2 spaces",
+      "fourSpaces": "4 spaces",
+      "convert": "Convert",
+      "examples": "Examples",
+      "examplesList": {
+        "simple": "Simple JSON",
+        "nested": "Nested structure",
+        "docker": "Docker YAML"
+      },
+      "jsonInput": "JSON Input",
+      "yamlInput": "YAML Input",
+      "jsonPlaceholder": "Enter JSON...",
+      "yamlPlaceholder": "Enter YAML...",
+      "jsonOutput": "JSON Output",
+      "yamlOutput": "YAML Output",
+      "jsonOutputPlaceholder": "JSON will appear here...",
+      "yamlOutputPlaceholder": "YAML will appear here...",
+      "copy": "Copy",
+      "copied": "Copied"
     },
     "cronParser": {
       "name": "Cron Parser",
@@ -628,7 +739,35 @@
       "exampleEveryMinute": "Every minute",
       "exampleEveryHour": "Every hour",
       "exampleDaily": "Daily at midnight",
-      "exampleWeekly": "Weekly on Monday"
+      "exampleWeekly": "Weekly on Monday",
+      "result": "Result",
+      "invalid": "Invalid",
+      "timezones": {
+        "utc": "UTC (Coordinated Universal Time)",
+        "local": "Local (System Time)",
+        "newYork": "New York (EST/EDT)",
+        "losAngeles": "Los Angeles (PST/PDT)",
+        "chicago": "Chicago (CST/CDT)",
+        "denver": "Denver (MST/MDT)",
+        "london": "London (GMT/BST)",
+        "paris": "Paris (CET/CEST)",
+        "berlin": "Berlin (CET/CEST)",
+        "tokyo": "Tokyo (JST)",
+        "shanghai": "Shanghai (CST)",
+        "sydney": "Sydney (AEST/AEDT)"
+      },
+      "examplesList": {
+        "everyMinute": "Every minute",
+        "everyHour": "Every hour",
+        "dailyMidnight": "Daily at midnight",
+        "weeklySunday": "Weekly on Sunday",
+        "monthlyFirst": "Monthly on 1st",
+        "yearly": "Yearly",
+        "monthly": "@monthly",
+        "weekly": "@weekly",
+        "daily": "@daily",
+        "hourly": "@hourly"
+      }
     },
     "colorPicker": {
       "name": "Color Picker",
@@ -642,9 +781,9 @@
       "hsl": "HSL",
       "cmyk": "CMYK",
       "examples": "Examples",
-      "hexExample": "#ff5733",
-      "rgbExample": "rgb(255, 87, 51)",
-      "hslExample": "hsl(11, 100%, 60%)",
+      "hexExample": "HEX Example",
+      "rgbExample": "RGB Example",
+      "hslExample": "HSL Example",
       "placeholder": "Enter a color value...",
       "invalidColor": "Invalid color value"
     },
@@ -670,7 +809,16 @@
       "output": "Output Text",
       "convert": "Convert",
       "placeholder": "Enter text to convert...",
-      "outputPlaceholder": "Converted text will appear here"
+      "outputPlaceholder": "Converted text will appear here",
+      "camel": "camelCase",
+      "snake": "snake_case",
+      "pascal": "PascalCase",
+      "constant": "CONSTANT_CASE",
+      "kebab": "kebab-case",
+      "title": "Title Case",
+      "train": "Train-Case",
+      "lower": "lowercase",
+      "upper": "UPPERCASE"
     },
     "wordCounter": {
       "name": "Word Counter",
@@ -744,6 +892,106 @@
       "input": "CURL Command",
       "output": "Generated Code",
       "outputPlaceholder": "Code will appear here..."
+    },
+    "svgOptimizer": {
+      "name": "SVG Optimizer",
+      "description": "Clean and reduce SVG file size",
+      "input": "SVG Input",
+      "output": "Optimized SVG",
+      "level": "Optimization Level",
+      "levels": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High"
+      },
+      "optimize": "Optimize",
+      "stats": "Size: {{original}} → {{optimized}} (Saved: {{savings}}%)",
+      "enterSvg": "Please enter SVG content",
+      "inputPlaceholder": "Paste your SVG code here...",
+      "outputPlaceholder": "Optimized SVG will appear here...",
+      "preview": "Preview"
+    },
+    "imageCompressor": {
+      "name": "Image Compressor",
+      "description": "Reduce PNG/JPEG/WebP file size",
+      "input": "Select Image",
+      "format": "Output Format",
+      "formats": {
+        "png": "PNG (Lossless)",
+        "jpeg": "JPEG (Lossy)",
+        "webp": "WebP (Modern)"
+      },
+      "quality": "Quality",
+      "compress": "Compress",
+      "stats": "Size: {{original}} → {{compressed}} (Saved: {{savings}}%)",
+      "selectImageFirst": "Please select an image first",
+      "dragDropOrClick": "Drag & drop or click to select",
+      "compressedWillAppear": "Compressed image will appear here",
+      "original": "Original",
+      "compressed": "Compressed",
+      "download": "Download"
+    },
+    "faviconGenerator": {
+      "name": "Favicon Generator",
+      "description": "Create favicon sets from images",
+      "input": "Source Image",
+      "sizes": "Sizes",
+      "generateIco": "Generate .ICO File",
+      "generatePngs": "Generate PNGs ZIP",
+      "download": "Download",
+      "info": ".ICO contains all sizes in one file",
+      "selectImageFirst": "Please select an image first",
+      "dragDropOrClick": "Drag & drop or click to select",
+      "recommended": "Recommended: 256x256 or larger",
+      "totalPngs": "Total PNGs: {{total}} | Total size: {{size}} KB",
+      "generatedFavicons": "Generated Favicons",
+      "generatedPngs": "Generated PNGs"
+    },
+    "base64ImagePreviewer": {
+      "name": "Base64 Image Previewer",
+      "description": "Preview base64 encoded images",
+      "input": "Paste Base64",
+      "preview": "Preview",
+      "info": {
+        "type": "Type",
+        "dimensions": "Dimensions",
+        "size": "Size",
+        "valid": "Valid",
+        "invalid": "Invalid"
+      },
+      "enterBase64Code": "Please enter Base64 code",
+      "download": "Download",
+      "imageInformation": "Image Information",
+      "placeholder": "data:image/png;base64,iVBORw0KGgo..."
+    },
+    "contrastChecker": {
+      "name": "Contrast Checker",
+      "description": "Check WCAG accessibility compliance",
+      "foreground": "Foreground",
+      "background": "Background",
+      "ratio": "Ratio",
+      "wcag": "WCAG Compliance",
+      "levels": {
+        "normalAa": "Normal AA (4.5:1)",
+        "largeAa": "Large AA (3:1)",
+        "normalAaa": "Normal AAA (7:1)",
+        "largeAaa": "Large AAA (4.5:1)"
+      },
+      "pass": "Pass",
+      "fail": "Fail",
+      "preview": "Preview Text",
+      "normalText": "Normal text size",
+      "largeText": "LARGE text size",
+      "enterBothColors": "Please enter both colors",
+      "checkContrast": "Check Contrast",
+      "copyRatio": "Copy Ratio",
+      "colorFormat": "HEX, RGB, or HSL format",
+      "foregroundLuminance": "FG Luminance",
+      "backgroundLuminance": "BG Luminance",
+      "foregroundLabel": "Foreground",
+      "backgroundLabel": "Background",
+      "ratioLabel": "Ratio",
+      "px": "px"
     }
   },
   "common": {
@@ -758,6 +1006,7 @@
     "decode": "Decode",
     "compress": "Compress",
     "decompress": "Decompress",
+    "refresh": "Refresh",
     "theme": {
       "light": "Light",
       "dark": "Dark"

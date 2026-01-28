@@ -20,9 +20,8 @@ export const Base64Image: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Check if it's an image
     if (!file.type.startsWith('image/')) {
-      setError('Please select a valid image file');
+      setError(t('tools.base64Image.errors.selectValidImage'));
       return;
     }
 
@@ -35,7 +34,7 @@ export const Base64Image: React.FC = () => {
       setError('');
     };
     reader.onerror = () => {
-      setError('Failed to read file');
+      setError(t('tools.base64Image.errors.failedToRead'));
     };
     reader.readAsDataURL(file);
   };
@@ -43,16 +42,14 @@ export const Base64Image: React.FC = () => {
   const handlePreview = () => {
     if (dataUrl) {
       try {
-        // Validate it's a data URL
         if (dataUrl.startsWith('data:image/')) {
           setPreview(dataUrl);
           setError('');
 
-          // Calculate size
           const size = new Blob([dataUrl]).size;
-          setFileInfo(`Data URL (${(size / 1024).toFixed(2)} KB)`);
+          setFileInfo(t('tools.base64Image.fileInfoDataUrl', { size: (size / 1024).toFixed(2) }));
         } else {
-          setError('Invalid data URL format. Must start with "data:image/"');
+          setError(t('tools.base64Image.errors.invalidDataUrl'));
           setPreview('');
         }
       } catch (err) {
@@ -64,22 +61,20 @@ export const Base64Image: React.FC = () => {
 
   const handleDownload = () => {
     if (!dataUrl) {
-      setError('No image data to download');
+      setError(t('tools.base64Image.errors.noImageData'));
       return;
     }
 
     try {
-      // Extract MIME type and extension
       const mimeMatch = dataUrl.match(/data:(image\/\w+);base64,/);
       if (!mimeMatch) {
-        setError('Invalid data URL format');
+        setError(t('tools.base64Image.errors.invalidDataUrl'));
         return;
       }
 
       const mimeType = mimeMatch[1];
       const extension = mimeType.split('/')[1];
 
-      // Create download link
       const link = document.createElement('a');
       link.href = dataUrl;
       link.download = `image.${extension}`;
@@ -87,7 +82,7 @@ export const Base64Image: React.FC = () => {
       link.click();
       document.body.removeChild(link);
 
-      setFileInfo(`Downloaded as image.${extension}`);
+      setFileInfo(t('tools.base64Image.fileInfoDownloaded', { extension }));
       setError('');
     } catch (err) {
       setError(String(err));
@@ -144,7 +139,7 @@ export const Base64Image: React.FC = () => {
         </label>
 
         <button onClick={handlePreview} className="btn btn-secondary">
-          {t('tools.base64Image.preview', 'Preview from Data URL')}
+          {t('tools.base64Image.preview')}
         </button>
 
         <button onClick={handleDownload} className="btn btn-secondary" disabled={!dataUrl}>

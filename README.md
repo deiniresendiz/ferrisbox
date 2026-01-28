@@ -99,6 +99,16 @@ FerrisBox is a powerful desktop application that provides essential developer to
 | **DNS Lookup**        | Query DNS records for any domain    | A, AAAA, MX, TXT, CNAME, NS |
 | **HTTP Status Codes** | Reference for HTTP response codes   | Full list with descriptions |
 
+### Graphics 🎨
+
+| Tool                       | Description                         | Features                            |
+| -------------------------- | ----------------------------------- | ----------------------------------- |
+| **SVG Optimizer**          | Clean and reduce SVG file size      | 3 optimization levels, preview      |
+| **Image Compressor**       | Reduce PNG/JPEG/WebP file size      | Quality control, format conversion  |
+| **Favicon Generator**      | Create favicon sets from images     | ICO + PNGs, multiple sizes          |
+| **Base64 Image Previewer** | Preview base64 encoded images       | Validate data URLs, download        |
+| **Contrast Checker**       | Check WCAG accessibility compliance | Color contrast ratio, AA/AAA levels |
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -147,7 +157,8 @@ ferrisbox/
 │       │   ├── generators/ # Generation tools
 │       │   ├── utilities/  # Utility tools
 │       │   ├── converters/ # Conversion tools
-│       │   └── network/    # Network tools
+│       │   ├── network/    # Network tools
+│       │   └── graphics/   # Graphics tools
 │       ├── storage/       # Configuration persistence
 │       └── utils/         # Helper functions
 └── public/                # Static assets (logo, icons, etc.)
@@ -252,11 +263,19 @@ The configuration includes:
 - [x] ASCII Art Generator
 - [x] List Sorter & Organizer
 
-### Phase 7 (Future)
+### Phase 7 (✅ Completed)
 
-- [ ] Image Compressor
+- [x] SVG Optimizer
+- [x] Image Compressor (PNG/JPEG/WebP)
+- [x] Favicon Generator (ICO + PNGs)
+- [x] Base64 Image Previewer
+- [x] Contrast Checker (WCAG compliance)
+
+### Phase 8 (Future)
+
 - [ ] CURL to Code Converter
-- [ ] More encoding formats
+- [ ] Image Diff Tool
+- [ ] PDF Utilities
 - [ ] Plugin system
 - [ ] Custom tool builder
 
@@ -317,8 +336,8 @@ Built with ❤️ using:
 
 ## 📊 Stats
 
-- **Total Tools**: 45
-- **Categories**: 6 (Formatters, Encoders, Generators, Converters, Utilities, Network)
+- **Total Tools**: 50
+- **Categories**: 7 (Formatters, Encoders, Generators, Converters, Utilities, Network, Graphics)
 - **Languages**: 4 (English, Spanish, Portuguese, Chinese)
 - **Themes**: 2 (Light, Dark)
 

@@ -179,8 +179,8 @@ data:
               onChange={(e) => setIndent(Number(e.target.value))}
               className="px-3 py-2 border border-gray-300 dark:border-space-600 rounded-md bg-white dark:bg-space-700 text-gray-900 dark:text-gray-100"
             >
-              <option value={2}>2 spaces</option>
-              <option value={4}>4 spaces</option>
+              <option value={2}>{t('tools.jsonYamlConverter.twoSpaces')}</option>
+              <option value={4}>{t('tools.jsonYamlConverter.fourSpaces')}</option>
             </select>
 
             <button onClick={handleConvert} className="btn btn-primary">
@@ -210,19 +210,19 @@ data:
               onClick={() => loadExample('simple')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.jsonYamlConverter.examples.simple')}
+              {t('tools.jsonYamlConverter.examplesList.simple')}
             </button>
             <button
               onClick={() => loadExample('nested')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.jsonYamlConverter.examples.nested')}
+              {t('tools.jsonYamlConverter.examplesList.nested')}
             </button>
             <button
               onClick={() => loadExample('docker')}
               className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
             >
-              {t('tools.jsonYamlConverter.examples.docker')}
+              {t('tools.jsonYamlConverter.examplesList.docker')}
             </button>
           </div>
         </div>

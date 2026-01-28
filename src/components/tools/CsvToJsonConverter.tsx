@@ -185,19 +185,19 @@ Jane,25`,
                 onClick={() => loadExample('simple')}
                 className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
               >
-                {t('tools.csvToJsonConverter.examples.simple')}
+                {t('tools.csvToJsonConverter.examplesList.simple')}
               </button>
               <button
                 onClick={() => loadExample('withHeader')}
                 className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
               >
-                {t('tools.csvToJsonConverter.examples.withHeader')}
+                {t('tools.csvToJsonConverter.examplesList.withHeader')}
               </button>
               <button
                 onClick={() => loadExample('excel')}
                 className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
               >
-                {t('tools.csvToJsonConverter.examples.excel')}
+                {t('tools.csvToJsonConverter.examplesList.excel')}
               </button>
             </div>
           </div>

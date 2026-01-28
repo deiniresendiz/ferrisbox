@@ -5,3 +5,4 @@ pub mod formatters;
 pub mod generators;
 pub mod utilities;
 pub mod network;
+pub mod graphics;

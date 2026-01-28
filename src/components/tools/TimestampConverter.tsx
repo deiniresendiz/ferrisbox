@@ -150,18 +150,34 @@ export const TimestampConverter: React.FC = () => {
               onChange={(e) => setTimezone(e.target.value)}
               className="px-3 py-2 border border-gray-300 dark:border-space-600 rounded-md bg-white dark:bg-space-700 text-gray-900 dark:text-gray-100"
             >
-              <option value="UTC">UTC (Coordinated Universal Time)</option>
-              <option value="Local">Local (System Time)</option>
-              <option value="America/New_York">New York (EST/EDT)</option>
-              <option value="America/Los_Angeles">Los Angeles (PST/PDT)</option>
-              <option value="America/Chicago">Chicago (CST/CDT)</option>
-              <option value="America/Denver">Denver (MST/MDT)</option>
-              <option value="Europe/London">London (GMT/BST)</option>
-              <option value="Europe/Paris">Paris (CET/CEST)</option>
-              <option value="Europe/Berlin">Berlin (CET/CEST)</option>
-              <option value="Asia/Tokyo">Tokyo (JST)</option>
-              <option value="Asia/Shanghai">Shanghai (CST)</option>
-              <option value="Australia/Sydney">Sydney (AEST/AEDT)</option>
+              <option value="UTC">{t('tools.timestampConverter.timezones.utc')}</option>
+              <option value="Local">{t('tools.timestampConverter.timezones.local')}</option>
+              <option value="America/New_York">
+                {t('tools.timestampConverter.timezones.newYork')}
+              </option>
+              <option value="America/Los_Angeles">
+                {t('tools.timestampConverter.timezones.losAngeles')}
+              </option>
+              <option value="America/Chicago">
+                {t('tools.timestampConverter.timezones.chicago')}
+              </option>
+              <option value="America/Denver">
+                {t('tools.timestampConverter.timezones.denver')}
+              </option>
+              <option value="Europe/London">
+                {t('tools.timestampConverter.timezones.london')}
+              </option>
+              <option value="Europe/Paris">{t('tools.timestampConverter.timezones.paris')}</option>
+              <option value="Europe/Berlin">
+                {t('tools.timestampConverter.timezones.berlin')}
+              </option>
+              <option value="Asia/Tokyo">{t('tools.timestampConverter.timezones.tokyo')}</option>
+              <option value="Asia/Shanghai">
+                {t('tools.timestampConverter.timezones.shanghai')}
+              </option>
+              <option value="Australia/Sydney">
+                {t('tools.timestampConverter.timezones.sydney')}
+              </option>
             </select>
           </div>
 

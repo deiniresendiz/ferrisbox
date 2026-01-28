@@ -277,25 +277,25 @@ export const UnitsConverter: React.FC = () => {
             onClick={() => loadExample('data', '1')}
             className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
           >
-            {t('tools.unitsConverter.examples.oneKb')}
+            {t('tools.unitsConverter.examplesList.oneKb')}
           </button>
           <button
             onClick={() => loadExample('data', '1024')}
             className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
           >
-            {t('tools.unitsConverter.examples.oneGb')}
+            {t('tools.unitsConverter.examplesList.oneGb')}
           </button>
           <button
             onClick={() => loadExample('data', '1073741824')}
             className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
           >
-            {t('tools.unitsConverter.examples.oneTb')}
+            {t('tools.unitsConverter.examplesList.oneTb')}
           </button>
           <button
             onClick={() => loadExample('time', '3600000')}
             className="px-3 py-1 text-sm bg-gray-100 dark:bg-space-700 rounded hover:bg-gray-200 dark:hover:bg-space-600 transition-colors"
           >
-            {t('tools.unitsConverter.examples.oneHour')}
+            {t('tools.unitsConverter.examplesList.oneHour')}
           </button>
         </div>
       </div>

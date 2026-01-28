@@ -7,3 +7,4 @@ pub mod utilities;
 pub mod converters;
 pub mod diff;
 pub mod network;
+pub mod graphics;
