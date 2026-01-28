@@ -12,7 +12,8 @@
       "formatters": "Formateadores",
       "generators": "Generadores",
       "converters": "Convertidores",
-      "utilities": "Utilidades"
+      "utilities": "Utilidades",
+      "networks": "Red"
     }
   },
   "tools": {
@@ -533,23 +534,6 @@
       "examples": "Ejemplos",
       "input": "Entrada",
       "output": "Salida"
-    }
-  },
-  "common": {
-    "copy": "Copiar",
-    "paste": "Pegar",
-    "clear": "Limpiar",
-    "error": "Error",
-    "success": "Éxito",
-    "copied": "¡Copiado al portapapeles!",
-    "convert": "Convertir",
-    "encode": "Codificar",
-    "decode": "Decodificar",
-    "compress": "Comprimir",
-    "decompress": "Descomprimir",
-    "theme": {
-      "light": "Claro",
-      "dark": "Oscuro"
     },
     "timestampConverter": {
       "name": "Convertidor de Timestamp",
@@ -760,6 +744,23 @@
       "input": "Comando CURL",
       "output": "Código Generado",
       "outputPlaceholder": "El código aparecerá aquí..."
+    }
+  },
+  "common": {
+    "copy": "Copiar",
+    "paste": "Pegar",
+    "clear": "Limpiar",
+    "error": "Error",
+    "success": "Éxito",
+    "copied": "¡Copiado al portapapeles!",
+    "convert": "Convertir",
+    "encode": "Codificar",
+    "decode": "Decodificar",
+    "compress": "Comprimir",
+    "decompress": "Descomprimir",
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro"
     }
   },
   "commandPalette": {

@@ -25,10 +25,6 @@ import {
   GitBranch,
   Clock,
   Calculator,
-  FileJson2 as FileJson3,
-  FileCode2 as FileCode3,
-  FileJson as FileJson4,
-  Hash as Hash2,
   Palette,
   Type,
   AlignLeft,
@@ -38,7 +34,7 @@ import {
   Wifi,
   Search,
   Info,
-  Terminal,
+  // Terminal,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -90,7 +86,7 @@ import { IpInfo } from '../components/tools/IpInfo';
 import { PortScanner } from '../components/tools/PortScanner';
 import { DnsLookup } from '../components/tools/DnsLookup';
 import { HttpStatusCodes } from '../components/tools/HttpStatusCodes';
-import { CurlToCode } from '../components/tools/CurlToCode';
+// import { CurlToCode } from '../components/tools/CurlToCode';
 
 export const TOOLS: Tool[] = [
   {
@@ -379,7 +375,7 @@ export const TOOLS: Tool[] = [
     description: 'Convert numbers between different bases',
     keywords: ['number', 'base', 'convert', 'binary', 'hex', 'octal', 'decimal'],
     component: NumberBaseConverter,
-    icon: Hash2 as LucideIcon,
+    icon: Hash as LucideIcon,
   },
   {
     id: 'markdown-to-html',
@@ -388,7 +384,7 @@ export const TOOLS: Tool[] = [
     description: 'Convert Markdown to HTML',
     keywords: ['markdown', 'html', 'convert', 'format', 'markup'],
     component: MarkdownToHtmlConverter,
-    icon: FileCode3 as LucideIcon,
+    icon: FileCode as LucideIcon,
   },
   {
     id: 'csv-to-json',
@@ -397,7 +393,7 @@ export const TOOLS: Tool[] = [
     description: 'Convert CSV data to JSON format',
     keywords: ['csv', 'json', 'convert', 'data', 'table'],
     component: CsvToJsonConverter,
-    icon: FileJson3 as LucideIcon,
+    icon: FileJson as LucideIcon,
   },
   {
     id: 'json-yaml',
@@ -406,7 +402,7 @@ export const TOOLS: Tool[] = [
     description: 'Convert between JSON and YAML formats',
     keywords: ['json', 'yaml', 'convert', 'format', 'config'],
     component: JsonYamlConverter,
-    icon: FileJson4 as LucideIcon,
+    icon: FileJson as LucideIcon,
   },
   {
     id: 'cron-parser',
@@ -415,7 +411,7 @@ export const TOOLS: Tool[] = [
     description: 'Parse and validate cron expressions',
     keywords: ['cron', 'schedule', 'parser', 'validate', 'jobs'],
     component: CronParser,
-    icon: FileCode3 as LucideIcon,
+    icon: FileCode as LucideIcon,
   },
   {
     id: 'color-picker',
@@ -516,6 +512,7 @@ export const TOOLS: Tool[] = [
     component: HttpStatusCodes,
     icon: Info as LucideIcon,
   },
+  /*
   {
     id: 'curl-to-code',
     name: 'Curl to Code',
@@ -525,6 +522,7 @@ export const TOOLS: Tool[] = [
     component: CurlToCode,
     icon: Terminal as LucideIcon,
   },
+  */
 ];
 
 export const getToolById = (id: string): Tool | undefined => {

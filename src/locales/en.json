@@ -12,7 +12,8 @@
       "formatters": "Formatters",
       "generators": "Generators",
       "converters": "Converters",
-      "utilities": "Utilities"
+      "utilities": "Utilities",
+      "networks": "Network"
     }
   },
   "tools": {
@@ -533,23 +534,6 @@
       "examples": "Examples",
       "input": "Input",
       "output": "Output"
-    }
-  },
-  "common": {
-    "copy": "Copy",
-    "paste": "Paste",
-    "clear": "Clear",
-    "error": "Error",
-    "success": "Success",
-    "copied": "Copied to clipboard!",
-    "convert": "Convert",
-    "encode": "Encode",
-    "decode": "Decode",
-    "compress": "Compress",
-    "decompress": "Decompress",
-    "theme": {
-      "light": "Light",
-      "dark": "Dark"
     },
     "timestampConverter": {
       "name": "Timestamp Converter",
@@ -760,6 +744,23 @@
       "input": "CURL Command",
       "output": "Generated Code",
       "outputPlaceholder": "Code will appear here..."
+    }
+  },
+  "common": {
+    "copy": "Copy",
+    "paste": "Paste",
+    "clear": "Clear",
+    "error": "Error",
+    "success": "Success",
+    "copied": "Copied to clipboard!",
+    "convert": "Convert",
+    "encode": "Encode",
+    "decode": "Decode",
+    "compress": "Compress",
+    "decompress": "Decompress",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark"
     }
   },
   "commandPalette": {

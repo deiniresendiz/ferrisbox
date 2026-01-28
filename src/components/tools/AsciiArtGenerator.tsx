@@ -19,7 +19,13 @@ export const AsciiArtGenerator: React.FC = () => {
   const favorite = isFavorite(toolId);
 
   useEffect(() => {
-    figlet.parseFont('Standard', standard);
+    try {
+      if (standard) {
+        figlet.parseFont('Standard', standard);
+      }
+    } catch (err) {
+      console.error('Failed to parse figlet font:', err);
+    }
   }, []);
 
   useEffect(() => {

@@ -88,6 +88,20 @@ pub fn run() {
             network::get_local_ip_command,
             network::scan_ports_command,
             network::dns_lookup_command,
+            // Converter commands
+            converters::json_to_yaml_command,
+            converters::yaml_to_json_command,
+            converters::csv_to_json_command,
+            converters::markdown_to_html_command,
+            converters::convert_number_base_command,
+            converters::convert_timestamp_command,
+            converters::date_to_timestamp_command,
+            converters::convert_color_command,
+            converters::convert_data_units_command,
+            converters::convert_time_units_command,
+            converters::convert_frequency_units_command,
+            converters::parse_cron_command,
+            converters::convert_case_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])
