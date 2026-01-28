@@ -1,4 +1,4 @@
-use crate::tools::converters::{
+pub use crate::tools::converters::{
     json_to_yaml_command, yaml_to_json_command,
     csv_to_json_command,
     markdown_to_html_command,
@@ -7,4 +7,5 @@ use crate::tools::converters::{
     convert_color_command,
     convert_data_units_command, convert_time_units_command, convert_frequency_units_command,
     parse_cron_command,
+    convert_case_command,
 };

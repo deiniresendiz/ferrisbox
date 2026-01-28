@@ -663,6 +663,103 @@
       "hslExample": "hsl(11, 100%, 60%)",
       "placeholder": "Enter a color value...",
       "invalidColor": "Invalid color value"
+    },
+    "textDiff": {
+      "name": "Text Diff",
+      "description": "Compare two texts and see the differences",
+      "original": "Original Text",
+      "modified": "Modified Text",
+      "compare": "Compare",
+      "diff": "Diff",
+      "unified": "Unified",
+      "sideBySide": "Side by Side",
+      "example": "Example",
+      "placeholder": "Enter text to compare...",
+      "additions": "additions",
+      "deletions": "deletions",
+      "unchanged": "unchanged"
+    },
+    "caseConverter": {
+      "name": "Case Converter",
+      "description": "Convert text between different naming conventions",
+      "input": "Input Text",
+      "output": "Output Text",
+      "convert": "Convert",
+      "placeholder": "Enter text to convert...",
+      "outputPlaceholder": "Converted text will appear here"
+    },
+    "wordCounter": {
+      "name": "Word Counter",
+      "description": "Count words, characters, lines and reading time",
+      "placeholder": "Type or paste text here...",
+      "words": "Words",
+      "chars": "Characters",
+      "charsNoSpaces": "Chars (no spaces)",
+      "lines": "Lines",
+      "paragraphs": "Paragraphs",
+      "readingTime": "Reading Time"
+    },
+    "stringEscaper": {
+      "name": "String Escaper",
+      "description": "Escape or unescape strings for programming languages",
+      "input": "Input String",
+      "output": "Escaped/Unescaped String",
+      "escape": "Escape",
+      "unescape": "Unescape",
+      "placeholder": "Enter string to process..."
+    },
+    "asciiArt": {
+      "name": "ASCII Art Generator",
+      "description": "Generate ASCII art banners from text",
+      "input": "Input Text",
+      "output": "ASCII Art",
+      "placeholder": "Enter text for banner..."
+    },
+    "listSorter": {
+      "name": "List Sorter",
+      "description": "Sort lists, remove duplicates, and shuffle",
+      "input": "Input List",
+      "output": "Sorted List",
+      "placeholder": "Enter items separated by newlines...",
+      "sortAz": "Sort A-Z",
+      "sortZa": "Sort Z-A",
+      "sortNatural": "Natural Sort",
+      "sortLength": "Sort by Length",
+      "reverse": "Reverse",
+      "shuffle": "Shuffle",
+      "removeDuplicates": "Remove Duplicates"
+    },
+    "ipInfo": {
+      "name": "IP Info",
+      "description": "Get local and public IP information",
+      "localIp": "Local IP",
+      "publicIp": "Public IP"
+    },
+    "portScanner": {
+      "name": "Port Scanner",
+      "description": "Scan common ports on localhost",
+      "scan": "Scan",
+      "noResults": "No results yet. Click scan to start.",
+      "open": "Open",
+      "closed": "Closed"
+    },
+    "dnsLookup": {
+      "name": "DNS Lookup",
+      "description": "Query DNS records (A, MX, CNAME, etc.)",
+      "lookup": "Lookup",
+      "noRecords": "No records found"
+    },
+    "httpStatus": {
+      "name": "HTTP Status Codes",
+      "description": "Reference for HTTP status codes",
+      "searchPlaceholder": "Search codes (e.g. 404, ok)..."
+    },
+    "curlToCode": {
+      "name": "Curl to Code",
+      "description": "Convert CURL commands to code",
+      "input": "CURL Command",
+      "output": "Generated Code",
+      "outputPlaceholder": "Code will appear here..."
     }
   },
   "commandPalette": {

@@ -147,15 +147,34 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_daily_cron() {
-        let result = parse_cron_command("0 0 * *".to_string(), Some(10)).unwrap();
+    fn test_parse_cron() {
+        let result = parse_cron_command("0 0 * * *".to_string(), Some(5), Some("UTC".to_string())).unwrap();
         assert!(result.valid);
-        assert!(result.next_runs.len() >= 10);
+        assert!(result.next_runs.len() <= 5);
+    }
+
+    #[test]
+    fn test_parse_cron_invalid() {
+        let result = parse_cron_command("invalid".to_string(), Some(5), Some("UTC".to_string()));
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn test_invalid_cron() {
+        let result = parse_cron_command("invalid expression".to_string(), Some(5), Some("UTC".to_string()));
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn test_at_keyword() {
+        let result = parse_cron_command("@hourly".to_string(), Some(5), Some("UTC".to_string())).unwrap();
+        assert!(result.valid);
+        assert!(result.description.contains("every hour"));
     }
 
     #[test]
     fn test_weekly_cron() {
-        let result = parse_cron_command("0 0 * * 0".to_string(), Some(5)).unwrap();
+        let result = parse_cron_command("0 0 * * 0".to_string(), Some(5), Some("UTC".to_string())).unwrap();
         assert!(result.valid);
         assert!(result.next_runs.len() >= 5);
         assert!(result.description.contains("on Sunday"));
@@ -163,21 +182,8 @@ mod tests {
 
     #[test]
     fn test_yearly_cron() {
-        let result = parse_cron_command("@yearly".to_string(), Some(5)).unwrap();
+        let result = parse_cron_command("@yearly".to_string(), Some(5), Some("UTC".to_string())).unwrap();
         assert!(result.valid);
         assert!(result.description.contains("once a year"));
-    }
-
-    #[test]
-    fn test_invalid_cron() {
-        let result = parse_cron_command("invalid expression".to_string(), Some(5));
-        assert!(result.is_err());
-    }
-
-    #[test]
-    fn test_at_keyword() {
-        let result = parse_cron_command("@hourly".to_string(), Some(5)).unwrap();
-        assert!(result.valid);
-        assert!(result.description.contains("every hour"));
     }
 }

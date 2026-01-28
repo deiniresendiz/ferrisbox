@@ -663,6 +663,103 @@
       "hslExample": "hsl(11, 100%, 60%)",
       "placeholder": "Introduce un valor de color...",
       "invalidColor": "Valor de color inválido"
+    },
+    "textDiff": {
+      "name": "Comparador de Texto",
+      "description": "Compara dos textos y ve las diferencias",
+      "original": "Texto Original",
+      "modified": "Texto Modificado",
+      "compare": "Comparar",
+      "diff": "Diferencias",
+      "unified": "Unificado",
+      "sideBySide": "Lado a Lado",
+      "example": "Ejemplo",
+      "placeholder": "Introduce texto para comparar...",
+      "additions": "adiciones",
+      "deletions": "eliminaciones",
+      "unchanged": "sin cambios"
+    },
+    "caseConverter": {
+      "name": "Convertidor de Mayúsculas/Minúsculas",
+      "description": "Convierte texto entre diferentes convenciones de nombres",
+      "input": "Texto de Entrada",
+      "output": "Texto de Salida",
+      "convert": "Convertir",
+      "placeholder": "Introduce texto para convertir...",
+      "outputPlaceholder": "El texto convertido aparecerá aquí"
+    },
+    "wordCounter": {
+      "name": "Contador de Palabras",
+      "description": "Cuenta palabras, caracteres, líneas y tiempo de lectura",
+      "placeholder": "Escribe o pega texto aquí...",
+      "words": "Palabras",
+      "chars": "Caracteres",
+      "charsNoSpaces": "Caracteres (sin espacios)",
+      "lines": "Líneas",
+      "paragraphs": "Párrafos",
+      "readingTime": "Tiempo de Lectura"
+    },
+    "stringEscaper": {
+      "name": "Escapador de Cadenas",
+      "description": "Escapa o desescapa cadenas para lenguajes de programación",
+      "input": "Cadena de Entrada",
+      "output": "Cadena Procesada",
+      "escape": "Escapar",
+      "unescape": "Desescapar",
+      "placeholder": "Introduce cadena para procesar..."
+    },
+    "asciiArt": {
+      "name": "Generador de Arte ASCII",
+      "description": "Genera banners de arte ASCII desde texto",
+      "input": "Texto de Entrada",
+      "output": "Arte ASCII",
+      "placeholder": "Introduce texto para el banner..."
+    },
+    "listSorter": {
+      "name": "Ordenador de Listas",
+      "description": "Ordena listas, elimina duplicados y aleatoriza",
+      "input": "Lista de Entrada",
+      "output": "Lista Ordenada",
+      "placeholder": "Introduce elementos separados por líneas...",
+      "sortAz": "Ordenar A-Z",
+      "sortZa": "Ordenar Z-A",
+      "sortNatural": "Orden Natural",
+      "sortLength": "Por Longitud",
+      "reverse": "Invertir",
+      "shuffle": "Aleatorio",
+      "removeDuplicates": "Eliminar Duplicados"
+    },
+    "ipInfo": {
+      "name": "Información IP",
+      "description": "Obtén información sobre tu IP local y pública",
+      "localIp": "IP Local",
+      "publicIp": "IP Pública"
+    },
+    "portScanner": {
+      "name": "Escáner de Puertos",
+      "description": "Escanea puertos comunes en localhost",
+      "scan": "Escanear",
+      "noResults": "Sin resultados. Pulsa escanear para comenzar.",
+      "open": "Abierto",
+      "closed": "Cerrado"
+    },
+    "dnsLookup": {
+      "name": "Consulta DNS",
+      "description": "Consulta registros DNS (A, MX, CNAME, etc.)",
+      "lookup": "Consultar",
+      "noRecords": "No se encontraron registros"
+    },
+    "httpStatus": {
+      "name": "Códigos de Estado HTTP",
+      "description": "Referencia de códigos de estado HTTP",
+      "searchPlaceholder": "Buscar códigos (ej. 404, ok)..."
+    },
+    "curlToCode": {
+      "name": "Curl a Código",
+      "description": "Convierte comandos CURL a código",
+      "input": "Comando CURL",
+      "output": "Código Generado",
+      "outputPlaceholder": "El código aparecerá aquí..."
     }
   },
   "commandPalette": {

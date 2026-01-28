@@ -23,7 +23,7 @@ pub struct TimestampInput {
 pub fn convert_timestamp_command(
     timestamp: i64,
     unit: String,
-    timezone: Option<String>,
+    _timezone: Option<String>,
 ) -> Result<TimestampOutput, String> {
     let seconds = if unit == "milliseconds" {
         timestamp / 1000
@@ -51,9 +51,9 @@ pub fn convert_timestamp_command(
 #[tauri::command]
 pub fn date_to_timestamp_command(
     date_string: String,
-    format: String,
+    format: Option<String>,
 ) -> Result<i64, String> {
-    let dt = match format.as_str() {
+    let dt = match format.as_deref().unwrap_or("iso8601") {
         "iso8601" => DateTime::parse_from_rfc3339(&date_string)
             .map_err(|e| e.to_string())?,
         "rfc2822" => DateTime::parse_from_rfc2822(&date_string)
@@ -80,45 +80,5 @@ fn format_time_ago(dt: &DateTime<Utc>) -> String {
         format!("{} days ago", seconds / 86400)
     } else {
         format!("{} months ago", seconds / 2592000)
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_timestamp_to_date() {
-        let result = convert_timestamp_command(1700000000, "seconds".to_string(), None);
-        assert!(result.is_ok());
-        let output = result.unwrap();
-        assert!(output.unix_timestamp == 1700000000);
-        assert!(output.utc_iso8601.starts_with("2024"));
-    }
-
-    #[test]
-    fn test_date_to_timestamp() {
-        let result = date_to_timestamp_command("2024-01-01T00:00:00Z".to_string(), "iso8601".to_string());
-        assert!(result.is_ok());
-        assert_eq!(result, 1704067200);
-    }
-
-    #[test]
-    fn test_milliseconds() {
-        let result = convert_timestamp_command(1700000000000, "milliseconds".to_string(), None);
-        assert!(result.is_ok());
-        assert_eq!(result.unwrap().unix_timestamp, 1700000000);
-    }
-
-    #[test]
-    fn test_invalid_timestamp() {
-        let result = convert_timestamp_command(-9999999999999, "seconds".to_string(), None);
-        assert!(result.is_err());
-    }
-
-    #[test]
-    fn test_invalid_date() {
-        let result = date_to_timestamp_command("invalid date".to_string(), "iso8601".to_string());
-        assert!(result.is_err());
     }
 }

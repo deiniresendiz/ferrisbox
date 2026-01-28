@@ -16,7 +16,13 @@ export interface RecentTool {
   last_used: string;
 }
 
-export type ToolCategory = 'encoder' | 'formatter' | 'generator' | 'converter' | 'utility';
+export type ToolCategory =
+  | 'encoder'
+  | 'formatter'
+  | 'generator'
+  | 'converter'
+  | 'utility'
+  | 'network';
 
 export interface Tool {
   id: string;

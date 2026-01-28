@@ -30,6 +30,15 @@ import {
   FileJson as FileJson4,
   Hash as Hash2,
   Palette,
+  Type,
+  AlignLeft,
+  Quote,
+  Printer,
+  ListOrdered,
+  Wifi,
+  Search,
+  Info,
+  Terminal,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -71,6 +80,17 @@ import { CsvToJsonConverter } from '../components/tools/CsvToJsonConverter';
 import { JsonYamlConverter } from '../components/tools/JsonYamlConverter';
 import { CronParser } from '../components/tools/CronParser';
 import { ColorPicker } from '../components/tools/ColorPicker';
+import { TextDiff } from '../components/tools/TextDiff';
+import { CaseConverter } from '../components/tools/CaseConverter';
+import { WordCounter } from '../components/tools/WordCounter';
+import { StringEscaper } from '../components/tools/StringEscaper';
+import { AsciiArtGenerator } from '../components/tools/AsciiArtGenerator';
+import { ListSorter } from '../components/tools/ListSorter';
+import { IpInfo } from '../components/tools/IpInfo';
+import { PortScanner } from '../components/tools/PortScanner';
+import { DnsLookup } from '../components/tools/DnsLookup';
+import { HttpStatusCodes } from '../components/tools/HttpStatusCodes';
+import { CurlToCode } from '../components/tools/CurlToCode';
 
 export const TOOLS: Tool[] = [
   {
@@ -405,6 +425,105 @@ export const TOOLS: Tool[] = [
     keywords: ['color', 'convert', 'hex', 'rgb', 'hsl', 'cmyk', 'picker'],
     component: ColorPicker,
     icon: Palette as LucideIcon,
+  },
+  {
+    id: 'text-diff',
+    name: 'Text Diff',
+    category: 'utility',
+    description: 'Compare two texts and see the differences',
+    keywords: ['diff', 'compare', 'text', 'changes', 'compare files'],
+    component: TextDiff,
+    icon: FileText as LucideIcon,
+  },
+  {
+    id: 'case-converter',
+    name: 'Case Converter',
+    category: 'converter',
+    description: 'Convert text between different naming conventions',
+    keywords: ['case', 'camel', 'snake', 'kebab', 'pascal', 'convert', 'text'],
+    component: CaseConverter,
+    icon: Type as LucideIcon,
+  },
+  {
+    id: 'word-counter',
+    name: 'Word Counter',
+    category: 'utility',
+    description: 'Count words, characters, lines and reading time',
+    keywords: ['count', 'words', 'chars', 'lines', 'stats', 'text', 'length'],
+    component: WordCounter,
+    icon: AlignLeft as LucideIcon,
+  },
+  {
+    id: 'string-escaper',
+    name: 'String Escaper',
+    category: 'encoder',
+    description: 'Escape or unescape strings for programming languages',
+    keywords: ['escape', 'unescape', 'string', 'json', 'java', 'js', 'code'],
+    component: StringEscaper,
+    icon: Quote as LucideIcon,
+  },
+  {
+    id: 'ascii-art',
+    name: 'ASCII Art Generator',
+    category: 'generator',
+    description: 'Generate ASCII art banners from text',
+    keywords: ['ascii', 'art', 'banner', 'text', 'figlet', 'font'],
+    component: AsciiArtGenerator,
+    icon: Printer as LucideIcon,
+  },
+  {
+    id: 'list-sorter',
+    name: 'List Sorter',
+    category: 'utility',
+    description: 'Sort lists, remove duplicates, and shuffle',
+    keywords: ['sort', 'list', 'unique', 'dedup', 'shuffle', 'order', 'alphabetical'],
+    component: ListSorter,
+    icon: ListOrdered as LucideIcon,
+  },
+  {
+    id: 'ip-info',
+    name: 'IP Info',
+    category: 'network',
+    description: 'Get local and public IP information',
+    keywords: ['ip', 'network', 'local', 'public', 'address', 'geoip'],
+    component: IpInfo,
+    icon: Wifi as LucideIcon,
+  },
+  {
+    id: 'port-scanner',
+    name: 'Port Scanner',
+    category: 'network',
+    description: 'Scan common ports on localhost',
+    keywords: ['port', 'scan', 'network', 'tcp', 'open', 'closed'],
+    component: PortScanner,
+    icon: Search as LucideIcon,
+  },
+  {
+    id: 'dns-lookup',
+    name: 'DNS Lookup',
+    category: 'network',
+    description: 'Query DNS records (A, MX, CNAME, etc.)',
+    keywords: ['dns', 'lookup', 'domain', 'records', 'a', 'mx', 'txt'],
+    component: DnsLookup,
+    icon: Globe as LucideIcon,
+  },
+  {
+    id: 'http-status',
+    name: 'HTTP Status Codes',
+    category: 'network',
+    description: 'Reference for HTTP status codes',
+    keywords: ['http', 'status', 'codes', 'error', '404', '500', '200'],
+    component: HttpStatusCodes,
+    icon: Info as LucideIcon,
+  },
+  {
+    id: 'curl-to-code',
+    name: 'Curl to Code',
+    category: 'network',
+    description: 'Convert CURL commands to code',
+    keywords: ['curl', 'convert', 'code', 'javascript', 'python', 'rust'],
+    component: CurlToCode,
+    icon: Terminal as LucideIcon,
   },
 ];
 

@@ -72,6 +72,19 @@ FerrisBox is a powerful desktop application that provides essential developer to
 | **GZip Compressor** | Compress and decompress with GZip/Zlib       | Archive support            |
 | **URL Parser**      | Parse URLs and edit query parameters         | Parameter editing          |
 
+### Converters 🔄
+
+| Tool                      | Description                                     | Features                     |
+| ------------------------- | ----------------------------------------------- | ---------------------------- |
+| **Timestamp Converter**   | Convert Unix timestamps to human-readable dates | Timezone support             |
+| **Units Converter**       | Convert between different units of measurement  | Data, Time, Frequency        |
+| **Number Base Converter** | Convert numbers between different bases         | Binary, Octal, Decimal, Hex  |
+| **Markdown to HTML**      | Convert Markdown to HTML                        | Code formatting              |
+| **CSV to JSON**           | Convert CSV data to JSON format                 | Configurable delimiter       |
+| **JSON/YAML Converter**   | Convert between JSON and YAML formats           | Bidirectional conversion     |
+| **Color Picker**          | Convert colors between different formats        | HEX, RGB, HSL, CMYK          |
+| **Text Diff**             | Compare two texts and see differences           | Side-by-side & Unified views |
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -83,7 +96,7 @@ FerrisBox is a powerful desktop application that provides essential developer to
 ### Installation
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/yourusername/ferrisbox.git
 cd ferrisbox
 
@@ -200,17 +213,17 @@ The configuration includes:
 - [x] URL Parser
 - [x] Base64 Image Encoder
 
-### Phase 5 (Planned)
+### Phase 5 (✅ Completed)
 
-- [ ] Text Diff Tool
-- [ ] Color Picker & Converter
-- [ ] Timestamp Converter
-- [ ] Cron Expression Builder
-- [ ] Number Base Converter
-- [ ] Unit Converter (Data, Time, Frequency)
-- [ ] Markdown to HTML Converter
-- [ ] JSON/YAML Converter
-- [ ] CSV to JSON Converter
+- [x] Text Diff Tool
+- [x] Color Picker & Converter
+- [x] Timestamp Converter
+- [x] Cron Expression Parser
+- [x] Number Base Converter
+- [x] Unit Converter (Data, Time, Frequency)
+- [x] Markdown to HTML Converter
+- [x] JSON/YAML Converter
+- [x] CSV to JSON Converter
 
 ### Phase 6 (Future)
 
@@ -277,8 +290,8 @@ Built with ❤️ using:
 
 ## 📊 Stats
 
-- **Total Tools**: 27
-- **Categories**: 4 (Formatters, Encoders, Generators, Utilities)
+- **Total Tools**: 36
+- **Categories**: 5 (Formatters, Encoders, Generators, Converters, Utilities)
 - **Languages**: 2 (English, Spanish)
 - **Themes**: 2 (Light, Dark)
 

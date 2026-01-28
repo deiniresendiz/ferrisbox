@@ -15,3 +15,5 @@ pub use timestamp::{convert_timestamp_command, date_to_timestamp_command};
 pub use color::convert_color_command;
 pub use units::{convert_data_units_command, convert_time_units_command, convert_frequency_units_command};
 pub use cron::parse_cron_command;
+pub mod case;
+pub use case::convert_case_command;
