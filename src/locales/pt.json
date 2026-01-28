@@ -12,7 +12,8 @@
       "formatters": "Formatadores",
       "generators": "Geradores",
       "converters": "Conversores",
-      "utilities": "Utilitários"
+      "utilities": "Utilitários",
+      "networks": "Rede"
     }
   },
   "tools": {

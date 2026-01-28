@@ -20,7 +20,6 @@ pub struct ColorInput {
     format: String,
 }
 
-#[tauri::command]
 pub fn convert_color_command(
     color: String,
     format: String,

@@ -51,7 +51,6 @@ pub struct Equivalence {
     unit: String,
 }
 
-#[tauri::command]
 pub fn convert_data_units_command(
     value: f64,
     from_unit: DataUnit,
@@ -87,7 +86,6 @@ pub fn convert_data_units_command(
     })
 }
 
-#[tauri::command]
 pub fn convert_time_units_command(
     value: f64,
     from_unit: TimeUnit,
@@ -127,7 +125,6 @@ pub fn convert_time_units_command(
     })
 }
 
-#[tauri::command]
 pub fn convert_frequency_units_command(
     value: f64,
     from_unit: FrequencyUnit,

@@ -18,7 +18,6 @@ pub struct CronInput {
     timezone: Option<String>,
 }
 
-#[tauri::command]
 pub fn parse_cron_command(
     expression: String,
     limit: Option<usize>,

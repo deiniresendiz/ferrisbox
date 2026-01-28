@@ -12,7 +12,8 @@
       "formatters": "格式化器",
       "generators": "生成器",
       "converters": "转换器",
-      "utilities": "实用工具"
+      "utilities": "实用工具",
+      "networks": "网络"
     }
   },
   "tools": {

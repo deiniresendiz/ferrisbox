@@ -8,7 +8,6 @@ pub struct CaseResult {
     case_type: String,
 }
 
-#[tauri::command]
 pub fn convert_case_command(text: String, target_case: String) -> Result<String, String> {
     let case = match target_case.as_str() {
         "camel" => Case::Camel,

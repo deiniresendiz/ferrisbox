@@ -19,7 +19,6 @@ pub struct TimestampInput {
     timezone: Option<String>,
 }
 
-#[tauri::command]
 pub fn convert_timestamp_command(
     timestamp: i64,
     unit: String,
@@ -48,7 +47,6 @@ pub fn convert_timestamp_command(
     })
 }
 
-#[tauri::command]
 pub fn date_to_timestamp_command(
     date_string: String,
     format: Option<String>,

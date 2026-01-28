@@ -11,7 +11,6 @@ pub struct MarkdownOptions {
     enable_tasklists: bool,
 }
 
-#[tauri::command]
 pub fn markdown_to_html_command(
     md: String,
     options: Option<MarkdownOptions>,

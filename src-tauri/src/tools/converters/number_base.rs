@@ -8,7 +8,6 @@ pub struct NumberBaseOutput {
     hexadecimal: String,
 }
 
-#[tauri::command]
 pub fn convert_number_base_command(
     input: String,
     from_base: u8,

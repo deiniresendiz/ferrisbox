@@ -9,7 +9,6 @@ pub struct CsvRow {
     fields: HashMap<String, String>,
 }
 
-#[tauri::command]
 pub fn csv_to_json_command(
     csv: String,
     delimiter: Option<String>,

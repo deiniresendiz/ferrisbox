@@ -1,7 +1,6 @@
 use serde_json::Value as JsonValue;
 use serde_yaml;
 
-#[tauri::command]
 pub fn json_to_yaml_command(json: String, _indent: usize) -> Result<String, String> {
     let value: JsonValue = serde_json::from_str(&json)
         .map_err(|e| e.to_string())?;
@@ -10,7 +9,6 @@ pub fn json_to_yaml_command(json: String, _indent: usize) -> Result<String, Stri
         .map_err(|e| e.to_string())
 }
 
-#[tauri::command]
 pub fn yaml_to_json_command(yaml: String, _indent: usize) -> Result<String, String> {
     let value: JsonValue = serde_yaml::from_str(&yaml)
         .map_err(|e| e.to_string())?;
