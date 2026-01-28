@@ -243,8 +243,9 @@ export const QrCodeGenerator: React.FC = () => {
                         WiFi QR Code
                       </h3>
                       <p className="text-sm text-blue-800 dark:text-blue-200">
-                        Scan this QR code with your phone to automatically connect to the network "
-                        {wifiSsid}".
+                        Scan this QR code with your phone to automatically connect to the network
+                        &ldquo;
+                        {wifiSsid}&rdquo;.
                       </p>
                     </div>
                   </div>

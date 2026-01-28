@@ -3,7 +3,7 @@ mod storage;
 mod tools;
 mod utils;
 
-use commands::{clipboard, encoders, formatters, generators, storage as storage_commands, utilities};
+use commands::{clipboard, converters, diff, encoders, formatters, generators, storage as storage_commands, utilities};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -82,6 +82,8 @@ pub fn run() {
             utilities::decompress_zlib_command,
             utilities::parse_url_command,
             utilities::update_query_params_command,
+            // Diff commands
+            diff::diff_text_command,
             // Clipboard commands
             clipboard::detect_clipboard_content,
         ])

@@ -5,3 +5,4 @@ pub mod generators;
 pub mod clipboard;
 pub mod utilities;
 pub mod converters;
+pub mod diff;

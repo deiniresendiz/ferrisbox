@@ -15,6 +15,14 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>('dark');
 
+  const updateDocumentTheme = React.useCallback((newTheme: Theme) => {
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
   useEffect(() => {
     // Load theme from config
     invoke<Config>('get_config')
@@ -30,15 +38,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         setThemeState(prefersDark ? 'dark' : 'light');
         updateDocumentTheme(prefersDark ? 'dark' : 'light');
       });
-  }, []);
-
-  const updateDocumentTheme = (newTheme: Theme) => {
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+  }, [updateDocumentTheme]);
 
   const setTheme = async (newTheme: Theme) => {
     setThemeState(newTheme);

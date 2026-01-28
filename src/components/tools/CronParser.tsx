@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { useTranslation } from 'react-i18next';
-import { Copy, Star, CalendarClock } from 'lucide-react';
+import { Check, Copy, Star, CalendarClock } from 'lucide-react';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import clsx from 'clsx';
 

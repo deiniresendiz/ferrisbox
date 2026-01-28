@@ -36,17 +36,7 @@ export const UrlParser: React.FC = () => {
   const toolId = 'url-parser';
   const favorite = isFavorite(toolId);
 
-  useEffect(() => {
-    handleParse();
-  }, [url]);
-
-  useEffect(() => {
-    if (parsed) {
-      handleRebuild();
-    }
-  }, [queryParams]);
-
-  const handleParse = async () => {
+  const handleParse = React.useCallback(async () => {
     if (!url.trim()) {
       setParsed(null);
       setQueryParams([]);
@@ -67,9 +57,9 @@ export const UrlParser: React.FC = () => {
       setQueryParams([]);
       setRebuiltUrl('');
     }
-  };
+  }, [url]);
 
-  const handleRebuild = async () => {
+  const handleRebuild = React.useCallback(async () => {
     if (!url.trim() || !parsed) return;
 
     try {
@@ -82,7 +72,17 @@ export const UrlParser: React.FC = () => {
     } catch (err) {
       setError(String(err));
     }
-  };
+  }, [url, parsed, queryParams]);
+
+  useEffect(() => {
+    handleParse();
+  }, [handleParse]);
+
+  useEffect(() => {
+    if (parsed) {
+      handleRebuild();
+    }
+  }, [parsed, handleRebuild]);
 
   const addParam = () => {
     setQueryParams([...queryParams, { key: '', value: '' }]);

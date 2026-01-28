@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { invoke } from '@tauri-apps/api/core';
 import { useTranslation } from 'react-i18next';
-import { Copy, HardDrive, Star } from 'lucide-react';
+import { Check, Copy, Star } from 'lucide-react';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import clsx from 'clsx';
 
@@ -122,7 +122,7 @@ export const UnitsConverter: React.FC = () => {
     }
   };
 
-  const loadExample = (type: 'data' | 'time' | 'frequency', value: string) => {
+  const loadExample = (_type: 'data' | 'time' | 'frequency', value: string) => {
     setValue(value);
     setOutput('');
     setError('');

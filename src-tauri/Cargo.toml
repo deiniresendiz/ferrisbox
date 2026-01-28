@@ -66,6 +66,7 @@ colorsys = "0.7"
 chrono = "0.4"
 pulldown-cmark = "0.12"
 cron = "0.12"
+diff = "0.1"
 
 [dev-dependencies]
 criterion = "0.5"

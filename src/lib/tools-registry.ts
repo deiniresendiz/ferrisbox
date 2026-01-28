@@ -23,6 +23,13 @@ import {
   ScanLine,
   Lock,
   GitBranch,
+  Clock,
+  Calculator,
+  FileJson2 as FileJson3,
+  FileCode2 as FileCode3,
+  FileJson as FileJson4,
+  Hash as Hash2,
+  Palette,
   type LucideIcon,
 } from 'lucide-react';
 import type { Tool } from '../types';
@@ -56,6 +63,14 @@ import { GitignoreGenerator } from '../components/tools/GitignoreGenerator';
 import { RsaKeyPairGenerator } from '../components/tools/RsaKeyPairGenerator';
 import { BcryptTester } from '../components/tools/BcryptTester';
 import { GitBranchNameGenerator } from '../components/tools/GitBranchNameGenerator';
+import { TimestampConverter } from '../components/tools/TimestampConverter';
+import { UnitsConverter } from '../components/tools/UnitsConverter';
+import { NumberBaseConverter } from '../components/tools/NumberBaseConverter';
+import { MarkdownToHtmlConverter } from '../components/tools/MarkdownToHtmlConverter';
+import { CsvToJsonConverter } from '../components/tools/CsvToJsonConverter';
+import { JsonYamlConverter } from '../components/tools/JsonYamlConverter';
+import { CronParser } from '../components/tools/CronParser';
+import { ColorPicker } from '../components/tools/ColorPicker';
 
 export const TOOLS: Tool[] = [
   {
@@ -318,6 +333,78 @@ export const TOOLS: Tool[] = [
     keywords: ['git', 'branch', 'kebab-case', 'name', 'naming'],
     component: GitBranchNameGenerator,
     icon: GitBranch as LucideIcon,
+  },
+  {
+    id: 'timestamp-converter',
+    name: 'Timestamp Converter',
+    category: 'converter',
+    description: 'Convert Unix timestamps to human-readable dates',
+    keywords: ['timestamp', 'unix', 'epoch', 'date', 'time', 'convert'],
+    component: TimestampConverter,
+    icon: Clock as LucideIcon,
+  },
+  {
+    id: 'units-converter',
+    name: 'Units Converter',
+    category: 'converter',
+    description: 'Convert between different units of measurement',
+    keywords: ['units', 'convert', 'data', 'time', 'frequency', 'measurement'],
+    component: UnitsConverter,
+    icon: Calculator as LucideIcon,
+  },
+  {
+    id: 'number-base-converter',
+    name: 'Number Base Converter',
+    category: 'converter',
+    description: 'Convert numbers between different bases',
+    keywords: ['number', 'base', 'convert', 'binary', 'hex', 'octal', 'decimal'],
+    component: NumberBaseConverter,
+    icon: Hash2 as LucideIcon,
+  },
+  {
+    id: 'markdown-to-html',
+    name: 'Markdown to HTML',
+    category: 'converter',
+    description: 'Convert Markdown to HTML',
+    keywords: ['markdown', 'html', 'convert', 'format', 'markup'],
+    component: MarkdownToHtmlConverter,
+    icon: FileCode3 as LucideIcon,
+  },
+  {
+    id: 'csv-to-json',
+    name: 'CSV to JSON',
+    category: 'converter',
+    description: 'Convert CSV data to JSON format',
+    keywords: ['csv', 'json', 'convert', 'data', 'table'],
+    component: CsvToJsonConverter,
+    icon: FileJson3 as LucideIcon,
+  },
+  {
+    id: 'json-yaml',
+    name: 'JSON/YAML Converter',
+    category: 'converter',
+    description: 'Convert between JSON and YAML formats',
+    keywords: ['json', 'yaml', 'convert', 'format', 'config'],
+    component: JsonYamlConverter,
+    icon: FileJson4 as LucideIcon,
+  },
+  {
+    id: 'cron-parser',
+    name: 'Cron Parser',
+    category: 'converter',
+    description: 'Parse and validate cron expressions',
+    keywords: ['cron', 'schedule', 'parser', 'validate', 'jobs'],
+    component: CronParser,
+    icon: FileCode3 as LucideIcon,
+  },
+  {
+    id: 'color-picker',
+    name: 'Color Picker',
+    category: 'converter',
+    description: 'Convert colors between different formats',
+    keywords: ['color', 'convert', 'hex', 'rgb', 'hsl', 'cmyk', 'picker'],
+    component: ColorPicker,
+    icon: Palette as LucideIcon,
   },
 ];
 

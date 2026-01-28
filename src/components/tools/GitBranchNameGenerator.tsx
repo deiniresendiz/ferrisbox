@@ -16,15 +16,7 @@ export const GitBranchNameGenerator: React.FC = () => {
   const toolId = 'git-branch-name-generator';
   const favorite = isFavorite(toolId);
 
-  useEffect(() => {
-    if (title) {
-      generateBranchName();
-    } else {
-      setOutput(null);
-    }
-  }, [title]);
-
-  const generateBranchName = async () => {
+  const generateBranchName = React.useCallback(async () => {
     if (!title) return;
 
     try {
@@ -36,7 +28,15 @@ export const GitBranchNameGenerator: React.FC = () => {
     } catch (err) {
       console.error('Branch name generation failed:', err);
     }
-  };
+  }, [title]);
+
+  useEffect(() => {
+    if (title) {
+      generateBranchName();
+    } else {
+      setOutput(null);
+    }
+  }, [title, generateBranchName]);
 
   const copyToClipboard = async () => {
     if (output) {
