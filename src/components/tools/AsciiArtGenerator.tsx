@@ -12,6 +12,7 @@ export const AsciiArtGenerator: React.FC = () => {
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [input, setInput] = useState('FerrisBox');
   const [output, setOutput] = useState('');
+  const [error, setError] = useState('');
   const [copied, setCopied] = useState(false);
 
   const toolId = 'ascii-art';
@@ -26,14 +27,26 @@ export const AsciiArtGenerator: React.FC = () => {
       setOutput('');
       return;
     }
+
+    const hasGenerated = { value: false };
+
     figlet.text(input, { font: 'Standard' }, (err, result) => {
+      if (hasGenerated.value) return;
+      hasGenerated.value = true;
+
       if (err) {
-        console.error(err);
-        setOutput('Error generating ASCII art');
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        setError(err.message);
+        setOutput('');
         return;
       }
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       setOutput(result || '');
     });
+
+    return () => {
+      hasGenerated.value = true;
+    };
   }, [input]);
 
   const handleCopy = async () => {
@@ -106,6 +119,8 @@ export const AsciiArtGenerator: React.FC = () => {
               </button>
             </div>
           )}
+
+          {error && <div className="text-red-500 text-sm">{error}</div>}
         </div>
       </div>
     </div>

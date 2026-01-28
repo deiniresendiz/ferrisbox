@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Star } from 'lucide-react';
 import { useFavorites } from '../../contexts/FavoritesContext';
@@ -8,19 +8,11 @@ export const WordCounter: React.FC = () => {
   const { t } = useTranslation();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [text, setText] = useState('');
-  const [stats, setStats] = useState({
-    chars: 0,
-    charsNoSpaces: 0,
-    words: 0,
-    lines: 0,
-    paragraphs: 0,
-    readingTime: 0,
-  });
 
   const toolId = 'word-counter';
   const favorite = isFavorite(toolId);
 
-  useEffect(() => {
+  const stats = useMemo(() => {
     const chars = text.length;
     const charsNoSpaces = text.replace(/\s/g, '').length;
     const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
@@ -29,7 +21,7 @@ export const WordCounter: React.FC = () => {
       text === '' ? 0 : text.split(/\n\s*\n/).filter((p) => p.trim() !== '').length;
     const readingTime = Math.ceil(words / 200); // 200 wpm
 
-    setStats({ chars, charsNoSpaces, words, lines, paragraphs, readingTime });
+    return { chars, charsNoSpaces, words, lines, paragraphs, readingTime };
   }, [text]);
 
   const toggleFavorite = () => {

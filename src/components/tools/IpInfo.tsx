@@ -5,6 +5,9 @@ import { Copy, Star, RefreshCw, Globe, Wifi } from 'lucide-react';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import clsx from 'clsx';
 
+// eslint-disable-next-line no-undef
+const fetch = window.fetch;
+
 interface LocalIpInfo {
   local_ip: string;
 }
@@ -30,7 +33,7 @@ export const IpInfo: React.FC = () => {
 
       // Public IP from external API
       const response = await fetch('https://api.ipify.org?format=json');
-      const data = await response.json();
+      const data = (await response.json()) as { ip: string };
       setPublicIp(data.ip);
     } catch (err) {
       console.error(err);
@@ -40,6 +43,7 @@ export const IpInfo: React.FC = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchData();
   }, []);

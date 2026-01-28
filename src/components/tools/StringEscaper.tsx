@@ -51,15 +51,21 @@ export const StringEscaper: React.FC = () => {
           result = JSON.parse(`"${input}"`);
           break;
         case 'html':
-          const doc = new DOMParser().parseFromString(input, 'text/html');
-          result = doc.documentElement.textContent || '';
+          // Simple HTML entity unescape (works on all platforms)
+          result = input
+            .replace(/&amp;/g, '&')
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&quot;/g, '"')
+            .replace(/&#039;/g, "'")
+            .replace(/&#39;/g, "'");
           break;
         case 'url':
           result = decodeURIComponent(input);
           break;
       }
       setOutput(result);
-    } catch (e) {
+    } catch {
       setOutput('Error: Invalid format');
     }
   };
